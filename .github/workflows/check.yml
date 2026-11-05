@@ -1,0 +1,34 @@
+name: check
+
+# The registry's checks on every pull request (portal check, design §6): a publication adds exactly one new version
+# and changes nothing else; a maintenance pull request changes only the repository's own files. Published versions
+# are never modified. The portal merges a publication only when this check passes.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  # The portal version whose checks the registry runs; moved deliberately, with the spec version it accepts.
+  PORTAL: git+https://github.com/entrylib/portal@f09f2080e6a21ca422e8c521be40d16920f8fc0b
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install "portal @ $PORTAL"
+      - run: git fetch -q origin main
+      - run: portal check --registry . --base origin/main
