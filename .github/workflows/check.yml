@@ -15,8 +15,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # The portal version whose checks the registry runs; moved deliberately, with the spec version it accepts.
-  PORTAL: git+https://github.com/entrylib/portal@a454fefb2956b9817df988dfc50130c2c85408a4
+  # Not pinned: each run checks with the current portal and the newest claimset, so this file never needs to change
+  # when either does. Each version's validation.json records the validator that checked it.
+  PORTAL: git+https://github.com/entrylib/portal
 
 jobs:
   check:
