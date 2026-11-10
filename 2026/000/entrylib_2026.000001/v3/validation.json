@@ -1,0 +1,175 @@
+{
+ "validator": "claimset 0.40.8",
+ "spec": "0.40",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W25",
+    "where": "claims:C13",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C14",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C16",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C18",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M1.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W8",
+    "where": "evidence:E11",
+    "message": "no estimate and no results: add a structured results list for the numbers this evidence produced"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C1.statement",
+    "message": "repeats 4 values of the tables it cites (0.0007, 0.0024, 0.9965, 1.0019): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C2.statement",
+    "message": "may hold more than one claim (contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C2.statement",
+    "message": "repeats 6 values of the tables it cites (0.813, 0.700, 0.554, 0.764, 0.778, 0.814): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C3.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C3.statement",
+    "message": "repeats 6 values of the tables it cites (0.774, 0.783, 0.752, 0.031, 0.0386, 0.0177): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C4.statement",
+    "message": "repeats 7 values of the tables it cites (1.0, 0.0100, 0.0120, 0.0139, 0.0172, 0.0085, 0.0246): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C5.statement",
+    "message": "0.6 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C5.statement",
+    "message": "repeats 4 values of the tables it cites (0.0352, 0.0224, 0.272, 0.077): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C6",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C7.statement",
+    "message": "may hold more than one claim (semicolon; parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C7.statement",
+    "message": "repeats 10 values of the tables it cites (0.957, 0.981, 0.980, 0.997, 0.996, 0.0196, 0.0197, 0.0100, 0.0026, 0.0027): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C8.statement",
+    "message": "repeats 12 values of the tables it cites (0.786, 0.668, 0.590, 0.789, 0.667, 0.589, 0.770, 0.635, 0.582, 0.781, 0.658, 0.585): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C9.statement",
+    "message": "80% in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C11.statement",
+    "message": "repeats 3 values of the tables it cites (0.764, 0.668, 0.695): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C13.statement",
+    "message": "0.77, 0.74 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C14.statement",
+    "message": "6, 3 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C15.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C15.statement",
+    "message": "repeats 8 values of the tables it cites (0.0265, 0.0100, 1.958, 1.043, 0.0053, 0.0085, 1.396, 1.058): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C17.statement",
+    "message": "repeats 4 values of the tables it cites (0.681, 0.683, 7e191, 0.899): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C19.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C19.statement",
+    "message": "repeats 6 values of the tables it cites (0.681, 0.756, 0.0402, 0.0124, 0.496, 0.551): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C20.statement",
+    "message": "repeats 6 values of the tables it cites (0.681, 0.729, 0.0402, 0.0187, 0.496, 0.514): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C22.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C22.statement",
+    "message": "repeats 5 values of the tables it cites (0.041, 0.035, 0.105, 0.076, 0.020): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C6,C10,C11,C23",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P2.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/2003"
+ }
+}
