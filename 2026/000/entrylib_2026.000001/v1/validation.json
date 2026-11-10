@@ -1,0 +1,106 @@
+{
+ "validator": "claimset 0.40.3",
+ "spec": "0.40",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W25",
+    "where": "claims:C13",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C14",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C16",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C18",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M1.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W8",
+    "where": "evidence:E11",
+    "message": "no estimate and no results: add a structured results list for the numbers this evidence produced"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C2.statement",
+    "message": "may hold more than one claim (contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C3.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C5.statement",
+    "message": "0.6 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C6",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C7.statement",
+    "message": "may hold more than one claim (semicolon; parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C9.statement",
+    "message": "80% in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C13.statement",
+    "message": "0.77, 0.74 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C14.statement",
+    "message": "6, 3 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C15.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C19.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C22.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C6,C10,C11,C23",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P2.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96"
+}
