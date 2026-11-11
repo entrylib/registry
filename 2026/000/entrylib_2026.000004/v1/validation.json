@@ -1,0 +1,40 @@
+{
+ "validator": "claimset 0.41.3",
+ "spec": "0.41",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W14",
+    "where": "references:B1.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B2.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M1.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W21",
+    "where": "artefacts:A7.uri",
+    "message": "the link names a branch or a moving reference, not a commit: what it shows will change; pin it to the full commit hash"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P2.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "classifier",
+  "classifier": "openalex:subfields/1210"
+ }
+}

@@ -1,0 +1,776 @@
+{
+ "schema_version": "0.41",
+ "paper": {
+  "title": "What MuseScore users ask for: unmet needs around arranging and parts",
+  "contributions": [
+   "C1",
+   "C2"
+  ],
+  "autonomy": "human_supervised",
+  "contribution_record": "complete",
+  "origin": "native",
+  "exploration": {
+   "lab_record": "A2",
+   "questions": 2,
+   "hypotheses": {
+    "total": 2,
+    "supported": 1,
+    "not_supported": 1,
+    "inconclusive": 0,
+    "revised": 0,
+    "abandoned": 0,
+    "open": 0,
+    "from_exploration": 2
+   },
+   "tests": {
+    "total": 2,
+    "supported": 1,
+    "not_supported": 1,
+    "inconclusive": 0
+   },
+   "runs": {
+    "total": 7,
+    "confirmatory": 2,
+    "exploratory": 5,
+    "failed": 1
+   }
+  },
+  "study": "musescore-needs",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "keywords": [
+    "MuseScore",
+    "music notation software",
+    "feature requests",
+    "user needs",
+    "music arranging",
+    "GitHub issues"
+   ],
+   "subfield": "openalex:subfields/1210",
+   "topics": [
+    "openalex:T11349",
+    "openalex:T11309",
+    "openalex:T11948"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "Ivan Svetunkov is the founder of Syntonic Labs, which develops music-arranging software."
+  },
+  "highlights": [
+   "C1",
+   "C2"
+  ],
+  "id": "entrylib:2026.000004",
+  "version": 1,
+  "date": "2026-11-11",
+  "status": "active"
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "positions": [
+    "guarantor",
+    "supervisor"
+   ],
+   "orcid": "0000-0001-7826-0281",
+   "credit_roles": [
+    "conceptualization",
+    "supervision"
+   ]
+  },
+  {
+   "id": "P2",
+   "type": "agent",
+   "name": "Research agent",
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "run_period": {
+    "start": "2026-11-05",
+    "end": "2026-11-05"
+   },
+   "tools": [
+    "code_execution"
+   ],
+   "record_source": "self_reported",
+   "credit_roles": [
+    "investigation",
+    "formal_analysis",
+    "software",
+    "data_curation",
+    "writing_original_draft"
+   ],
+   "ai_tasks": [
+    {
+     "task": "code",
+     "extent": "full"
+    },
+    {
+     "task": "analysis",
+     "extent": "full"
+    },
+    {
+     "task": "writing",
+     "extent": "full"
+    },
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ]
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude Opus",
+   "version": "5.5",
+   "identifier": "claude-opus-5-5",
+   "accessed": "2026-11-05"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "MuseScore feature requests",
+   "kind": "data",
+   "definition": "Issues in the public GitHub repository musescore/MuseScore labelled 'feature request', downloaded with the GitHub API; pull requests excluded."
+  },
+  {
+   "id": "D2",
+   "term": "exploration set",
+   "kind": "data",
+   "definition": "MuseScore feature requests with odd issue numbers; used to explore themes and form hypotheses."
+  },
+  {
+   "id": "D3",
+   "term": "held-out set",
+   "kind": "data",
+   "definition": "MuseScore feature requests with even issue numbers; not read during exploration; reserved for planned tests."
+  },
+  {
+   "id": "D4",
+   "term": "theme classifier",
+   "kind": "method",
+   "definition": "Fixed case-insensitive keyword rules (regular expressions in themes.py, artefact A6) applied to an issue's title and body; an issue may belong to several themes."
+  },
+  {
+   "id": "D5",
+   "term": "arranging and instrumentation theme",
+   "kind": "variable",
+   "definition": "Feature requests matched by the theme classifier's arranging_instrumentation rule (arranging, orchestration, reduction, implode/explode, instrument change, ensemble, instrumentation, playable range)."
+  },
+  {
+   "id": "D6",
+   "term": "notation and engraving theme",
+   "kind": "variable",
+   "definition": "Feature requests matched by the theme classifier's notation_engraving rule (slurs, ties, accidentals, stems, beams, tuplets, clefs, signatures, lyrics, chord symbols, articulations, dynamics, engraving)."
+  },
+  {
+   "id": "D7",
+   "term": "share of issues in theme",
+   "kind": "variable",
+   "definition": "Issues matched by a theme rule divided by all issues in the set."
+  },
+  {
+   "id": "D8",
+   "term": "total reactions on issues in theme",
+   "kind": "variable",
+   "definition": "Sum of GitHub reactions (all reaction types) on the issues matched by a theme rule, at download time."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "statement": "Requests in the [[D5:arranging and instrumentation theme]] make up less than 10% of [[D1:MuseScore feature requests]]: the [[D7:share of issues in theme]] was 0.0459 on the [[D3:held-out set]].",
+   "about": {
+    "subject": "D5",
+    "relation": "makes up less than 10% of",
+    "object": "D1",
+    "comparator": null,
+    "conditions": [
+     "D3"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.R1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H1",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-05T12:02:45Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "deterministic",
+    "parameters": {
+     "threshold": 0.1,
+     "sample": "all 654 held-out issues; one run; no stopping rule"
+    },
+    "quantities": {
+     "s": {
+      "variable": "D7",
+      "conditions": {
+       "theme": "arranging_instrumentation",
+       "set": "held-out"
+      }
+     }
+    },
+    "supported": "s < threshold",
+    "not_supported": "s >= threshold",
+    "verdict": "computed",
+    "runs": 1,
+    "lab_plan": "PL3",
+    "flags": [
+     "holdout_used_elsewhere"
+    ]
+   },
+   "scope": {
+    "population": "Issues labelled \"feature request\" in the GitHub repository musescore/MuseScore",
+    "period": "Issues created up to the download on 2026-11-05",
+    "data_type": "GitHub issue titles and bodies (first 2,000 characters)",
+    "conditions": [
+     "themes defined by fixed keyword rules",
+     "held-out set: even-numbered issues"
+    ],
+    "excludes": [
+     "requests made in forums, Reddit, app reviews or by e-mail",
+     "users who do not file GitHub issues"
+    ]
+   },
+   "limitations": [
+    "L1",
+    "L2",
+    "L3"
+   ],
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B1",
+     "note": "Li et al. studied how feature requests in 825 popular GitHub repositories are labelled, submitted and handled over a project's life; they did not measure which topics the requests of a music-notation project concern."
+    }
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C2",
+   "statement": "Requests in the [[D6:notation and engraving theme]] did not receive more [[D8:total reactions on issues in theme]] than every other theme on the [[D3:held-out set]]: they received 215 reactions, against 250 for the input, workflow and interface theme.",
+   "about": {
+    "subject": "D6",
+    "relation": "does not receive more reactions than",
+    "object": "D8",
+    "comparator": "every other theme of the theme classifier",
+    "conditions": [
+     "D3"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.T1.r1",
+      "E2.T1.r2",
+      "E2.T1.r3",
+      "E2.T1.r4",
+      "E2.T1.r5",
+      "E2.T1.r6",
+      "E2.T1.r7",
+      "E2.T1.r8",
+      "E2.T1.r9"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H2",
+    "outcome": "not_supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-05T12:02:38Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "deterministic",
+    "parameters": {
+     "sample": "all 654 held-out issues; one run; no stopping rule",
+     "ties": "a tie counts as not more"
+    },
+    "quantities": {
+     "n": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "notation_engraving",
+       "set": "held-out"
+      }
+     },
+     "a": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "arranging_instrumentation",
+       "set": "held-out"
+      }
+     },
+     "p": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "parts_and_linked_staves",
+       "set": "held-out"
+      }
+     },
+     "t": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "transposition",
+       "set": "held-out"
+      }
+     },
+     "g": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "generation_assistance",
+       "set": "held-out"
+      }
+     },
+     "pb": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "playback_sound",
+       "set": "held-out"
+      }
+     },
+     "pl": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "platform_install",
+       "set": "held-out"
+      }
+     },
+     "ie": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "import_export",
+       "set": "held-out"
+      }
+     },
+     "ui": {
+      "variable": "D8",
+      "conditions": {
+       "theme": "input_workflow_ui",
+       "set": "held-out"
+      }
+     }
+    },
+    "supported": "n > a and n > p and n > t and n > g and n > pb and n > pl and n > ie and n > ui",
+    "not_supported": "n <= a or n <= p or n <= t or n <= g or n <= pb or n <= pl or n <= ie or n <= ui",
+    "verdict": "computed",
+    "runs": 1,
+    "lab_plan": "PL2",
+    "flags": [
+     "holdout_used_elsewhere"
+    ]
+   },
+   "scope": {
+    "population": "Issues labelled \"feature request\" in the GitHub repository musescore/MuseScore",
+    "period": "Issues created up to the download on 2026-11-05",
+    "data_type": "GitHub issue titles and bodies (first 2,000 characters)",
+    "conditions": [
+     "themes defined by fixed keyword rules",
+     "held-out set: even-numbered issues"
+    ],
+    "excludes": [
+     "requests made in forums, Reddit, app reviews or by e-mail",
+     "users who do not file GitHub issues"
+    ]
+   },
+   "limitations": [
+    "L1",
+    "L2",
+    "L3"
+   ],
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B1",
+     "note": "Li et al. studied how feature requests in 825 popular GitHub repositories are labelled, submitted and handled over a project's life; they did not measure which topics the requests of a music-notation project concern."
+    }
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "quant",
+   "design": "observational",
+   "description": "Count of MuseScore feature requests matched by the arranging and instrumentation keyword rule, on the 654 even-numbered issues labelled 'feature request' in musescore/MuseScore (held-out set), downloaded through the GitHub search API on 2026-11-05 (lab runs RN2, RN3 and RN6; plan PL3).",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN6"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "D7",
+     "value": 0.0459,
+     "conditions": {
+      "theme": "arranging_instrumentation",
+      "set": "held-out"
+     }
+    }
+   ],
+   "artefacts": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "setup": {
+    "studied": [
+     "D5"
+    ],
+    "cases": [
+     "D3",
+     "D1"
+    ],
+    "procedure": [
+     "D4"
+    ],
+    "lens": [
+     "D7"
+    ]
+   },
+   "execution": {
+    "code_version": "831a6bf93175978b0965afba7f94540d2e4fe358",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39"
+    }
+   },
+   "data_origin": "secondary",
+   "n": 654
+  },
+  {
+   "id": "E2",
+   "profile": "quant",
+   "design": "observational",
+   "description": "Total GitHub reactions on MuseScore feature requests in each of nine keyword-defined themes, on the 654 even-numbered issues labelled 'feature request' in musescore/MuseScore (held-out set), downloaded through the GitHub search API on 2026-11-05 (lab runs RN2, RN3 and RN7; plan PL2). The computation repeats that of E1 under a second plan: the lab record version used allowed one decision rule per plan, and H1 and H2 needed different rules.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN7"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Total GitHub reactions on the 654 held-out MuseScore feature requests (even issue numbers), by keyword-defined theme; a request can belong to several themes",
+     "conditions": {
+      "set": "held-out"
+     },
+     "row_labels": [
+      "theme"
+     ],
+     "columns": [
+      "D8"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "arranging_instrumentation"
+       ],
+       "values": [
+        44
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "parts_and_linked_staves"
+       ],
+       "values": [
+        117
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "transposition"
+       ],
+       "values": [
+        13
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "generation_assistance"
+       ],
+       "values": [
+        12
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "notation_engraving"
+       ],
+       "values": [
+        215
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "playback_sound"
+       ],
+       "values": [
+        185
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "platform_install"
+       ],
+       "values": [
+        76
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "import_export"
+       ],
+       "values": [
+        154
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "input_workflow_ui"
+       ],
+       "values": [
+        250
+       ]
+      }
+     ],
+     "artefact": "A1"
+    }
+   ],
+   "artefacts": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "setup": {
+    "studied": [
+     "D6"
+    ],
+    "cases": [
+     "D3"
+    ],
+    "procedure": [
+     "D4"
+    ],
+    "lens": [
+     "D8"
+    ]
+   },
+   "execution": {
+    "code_version": "831a6bf93175978b0965afba7f94540d2e4fe358",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39"
+    }
+   },
+   "data_origin": "secondary",
+   "n": 654
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "measurement",
+   "statement": "Themes are assigned by keyword rules on issue titles and bodies; some matches are incidental words, and issues about a theme that use other words are missed.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "none"
+  },
+  {
+   "id": "L2",
+   "category": "sampling",
+   "statement": "GitHub feature requests come from people who file issues on GitHub, mostly experienced users and contributors; they do not represent all MuseScore users. A study of Moodle found that developers write most issue-tracker feature requests while users write most forum requests (KC and Hosseini 2026, arXiv:2606.20876).",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L3",
+   "category": "data_quality",
+   "statement": "Reactions are sparse: the median exploration-set issue has none, so theme totals are driven by a few issues.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none"
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A1",
+   "kind": "data",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/files/export-v041.results.csv",
+   "version": "sha256:27fa6444ff54bf86431cb9304acc693b19483212497a07816918f4189e7ad682",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Every result of the lab record (117 results of 6 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+   "columns": [
+    {
+     "name": "lab_result",
+     "dimension": "the result event of the lab record"
+    },
+    {
+     "name": "run",
+     "dimension": "the lab run that produced it"
+    },
+    {
+     "name": "quantity",
+     "dimension": "the quantity, as the run's script named it"
+    },
+    {
+     "name": "conditions",
+     "dimension": "the result's conditions, as JSON"
+    },
+    {
+     "name": "value",
+     "variable": "the value of the quantity, as JSON, at full precision"
+    }
+   ],
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A2",
+   "kind": "lab_record",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/lab/lab.jsonl",
+   "version": "sha256:bb211d694c6c3b18e2fef9d47891e95ebbd8b9078f34493bce3bf882fc9ba44e",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.15, begun 2026-11-05; exported with claimset 0.41.2).",
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A3",
+   "kind": "code",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/code/fetch_issues.py",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Python script fetch_issues.py: downloads the feature requests through the GitHub search API, one creation year per query (run RN2).",
+   "version": "sha256:8ea7103f33e488835731f44e410b3156a83656518cf93b37fccd67c7bba9aa71"
+  },
+  {
+   "id": "A4",
+   "kind": "code",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/code/split_parity.py",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Python script split_parity.py: splits the downloaded feature requests by issue number, odd numbers for exploration and even numbers held out (run RN3).",
+   "version": "sha256:a9c8e543460b349f540d326e79464e0bd064d2852c3295e3b2358b929f6216f1"
+  },
+  {
+   "id": "A5",
+   "kind": "code",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/code/explore_top.py",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Python script explore_top.py: lists the exploration set by reactions (run RN4).",
+   "version": "sha256:940a0c7eb3e8489d0fa2459f87fed22f66f8d9f1009ab179e18d5001639ec14d"
+  },
+  {
+   "id": "A6",
+   "kind": "code",
+   "uri": "https://entrylib.org/p/2026.000004/v1/files/code/themes.py",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Python script themes.py: theme classifier: fixed keyword rules and per-theme counts (runs RN5, RN6, RN7).",
+   "version": "sha256:8009d75775e6780b6334ca5ef4e97d50eabb30c3e87059544b62b536f2dd2f2b"
+  },
+  {
+   "id": "A7",
+   "kind": "data",
+   "uri": "https://github.com/musescore/MuseScore/issues?q=is%3Aissue%20label%3A%22feature%20request%22",
+   "reference": "B2",
+   "availability": {
+    "level": "public",
+    "comment": "Public on GitHub. The issue texts belong to their authors and are not redistributed in this package; fetch_issues.py downloads them again. The lab record keeps the hashes of the files the runs read."
+   },
+   "description": "The 1,289 issues labelled \"feature request\" in the GitHub repository musescore/MuseScore, as downloaded through the GitHub search API on 2026-11-05 (run RN2): titles, the first 2,000 characters of bodies, creation dates, states, reactions, comments and labels."
+  }
+ ],
+ "references": [
+  {
+   "id": "B1",
+   "target": "Li, J., Yang, W., Pan, M. and Zhou, Y. (2025). Understanding Feature Request Practice on GitHub via a Large Scale Empirical Study. 40th IEEE/ACM International Conference on Automated Software Engineering (ASE 2025).",
+   "id_type": "reference"
+  },
+  {
+   "id": "B2",
+   "target": "musescore/MuseScore GitHub repository, issues labelled \"feature request\", https://github.com/musescore/MuseScore, retrieved 2026-11-05",
+   "id_type": "reference"
+  }
+ ]
+}
