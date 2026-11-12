@@ -1,0 +1,75 @@
+{
+ "validator": "claimset 0.41.9",
+ "spec": "0.41",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W13",
+    "where": "claims:C1",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C2",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C3",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C4",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C5",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C6",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C7",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C8",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C9",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C10",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C11",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W3",
+    "where": "paper.contribution_record",
+    "message": "contribution record is partial"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/1803"
+ }
+}
