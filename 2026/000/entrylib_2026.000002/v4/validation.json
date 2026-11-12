@@ -1,0 +1,155 @@
+{
+ "validator": "claimset 0.41.9",
+ "spec": "0.41",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W25",
+    "where": "claims:C10",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C11",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C12",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C23",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C27",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C1.checks[2]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C2.checks[1]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C3.checks[1]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C4.checks[2]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C5.checks[2]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C16.checks[1]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C10.checks[1]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C11.checks[1]",
+    "message": "checker P5 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C15.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C21.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C22.statement",
+    "message": "may hold more than one claim (contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C22",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C23.statement",
+    "message": "may hold more than one claim (addition 'also'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C26.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C27.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C29.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C31.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W18",
+    "where": "evidence:E2",
+    "message": "same code and the same results as E1: one evidence object, cited by every claim it supports (and one plan for several hypotheses)"
+   },
+   {
+    "rule": "W18",
+    "where": "evidence:E21",
+    "message": "same code and the same results as E20: one evidence object, cited by every claim it supports (and one plan for several hypotheses)"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P3.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P4.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P5.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P6.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "classifier",
+  "classifier": "openalex:subfields/1803"
+ }
+}
