@@ -1,0 +1,85 @@
+{
+ "validator": "claimset 0.42.6",
+ "spec": "0.42",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W13",
+    "where": "claims:C1",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C1.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C2.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C4.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W13",
+    "where": "claims:C5",
+    "message": "exploratory principal claim: say so in the assessment rationale"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C5.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C6.statement",
+    "message": "may hold more than one claim (contrast 'whereas'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C6.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C7.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W11",
+    "where": "claims:C8.checks[0]",
+    "message": "checker P4 runs on the same model as an author agent; a different model would make the check more independent"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C10.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P3.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P4.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W3",
+    "where": "paper.contribution_record",
+    "message": "contribution record is partial"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "classifier",
+  "classifier": "openalex:subfields/1803"
+ }
+}
