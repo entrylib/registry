@@ -1,0 +1,90 @@
+{
+ "validator": "claimset 0.43.0",
+ "spec": "0.43",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W32",
+    "where": "references:B1",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B5",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C1,C6,C29,C30,C31",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C5,C32,C33",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C12,C37,C39",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C44,C45,C46",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P1.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C40",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w1",
+    "where": "claims:C42",
+    "message": "rests only on works read in their abstracts or through others' accounts: a full text could qualify what it states"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C42",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C45",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C49",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C52",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w2",
+    "where": "claims:C53",
+    "message": "no extract: the passage its cited support rests on is not shown"
+   },
+   {
+    "rule": "review.w3",
+    "where": "paper.ext.review.searches",
+    "message": "no searches recorded: the claims were confirmed against works the authors knew, not searched for; say so in their limitations"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/1803"
+ }
+}
