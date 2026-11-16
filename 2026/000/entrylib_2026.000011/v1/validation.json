@@ -1,0 +1,70 @@
+{
+ "validator": "claimset 0.44.1",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W14",
+    "where": "references:B7.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B9.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C6.statement",
+    "message": "cites results of E4, E5: if the statement reports a result of each, it may hold more than one claim; split it if one part could be true and another false"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C18.statement",
+    "message": "may hold more than one claim (contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W20",
+    "where": "claims:C3",
+    "message": "a contribution that L3 could reverse, with no mitigation: say in the strength rationale how that risk was weighed (naming L3), or lower the strength"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P2.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.orcid",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P4.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W3",
+    "where": "paper.contribution_record",
+    "message": "contribution record is partial"
+   },
+   {
+    "rule": "W4",
+    "where": "paper.autonomy",
+    "message": "human_assisted but no human contributor listed"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "classifier",
+  "classifier": "openalex:subfields/2003"
+ }
+}
