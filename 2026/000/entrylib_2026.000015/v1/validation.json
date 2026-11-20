@@ -1,0 +1,265 @@
+{
+ "validator": "claimset 0.44.12",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W32",
+    "where": "references:B1",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B2",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B3",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B4",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B5",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B6",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B7",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B8",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B9",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B10",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B11",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B12",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B13",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B14",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B15",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B16",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B17",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B18",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B19",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B20",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B21",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B22",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B23",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B24",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B26",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B27",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B28",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B29",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B30",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B31",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B32",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B33",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B34",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B35",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B36",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B37",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W9",
+    "where": "artefacts:A37.licence",
+    "message": "recommended: state the artefact's licence (SPDX identifier)"
+   },
+   {
+    "rule": "W9",
+    "where": "artefacts:A38.licence",
+    "message": "recommended: state the artefact's licence (SPDX identifier)"
+   },
+   {
+    "rule": "W9",
+    "where": "artefacts:A39.licence",
+    "message": "recommended: state the artefact's licence (SPDX identifier)"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M1.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C1.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C1.statement",
+    "message": "cited result E1.R1 = 1 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C1.statement",
+    "message": "cited result E1.R2 = 1 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C2.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C2.statement",
+    "message": "cites results of E2, E3: if the statement reports a result of each, it may hold more than one claim; split it if one part could be true and another false"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P1.ai_tasks",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P1.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.ai_tasks",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.tools",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P3.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/1210"
+ }
+}
