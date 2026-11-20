@@ -1,0 +1,90 @@
+{
+ "validator": "claimset 0.44.12",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W14",
+    "where": "references:B7.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B9.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B12.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B13.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B14.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M2.identifier",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M3.identifier",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C6.statement",
+    "message": "cites results of E4, E5: if the statement reports a result of each, it may hold more than one claim; split it if one part could be true and another false"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P2.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.orcid",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P4.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P5.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W2",
+    "where": "contributors:P6.record_source",
+    "message": "absent or self_reported; details are the agent's own account"
+   },
+   {
+    "rule": "W3",
+    "where": "paper.contribution_record",
+    "message": "contribution record is partial"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/2003"
+ }
+}
