@@ -1,0 +1,4166 @@
+{
+ "schema_version": "0.44",
+ "paper": {
+  "title": "Automatic arrangement of music into notated scores for chosen instruments: a systematic web search of software, services and research systems (November 2026)",
+  "contributions": [
+   "C1",
+   "C2"
+  ],
+  "autonomy": "human_supervised",
+  "contribution_record": "complete",
+  "origin": "native",
+  "exploration": {
+   "lab_record": "A38",
+   "questions": 1,
+   "hypotheses": {
+    "total": 1,
+    "supported": 0,
+    "not_supported": 1,
+    "inconclusive": 0,
+    "revised": 0,
+    "abandoned": 0,
+    "open": 0,
+    "from_exploration": 1
+   },
+   "tests": {
+    "total": 1,
+    "supported": 0,
+    "not_supported": 1,
+    "inconclusive": 0
+   },
+   "runs": {
+    "total": 8,
+    "confirmatory": 5,
+    "exploratory": 3,
+    "failed": 0
+   },
+   "not_claimed": [
+    {
+     "lab_event": "Q1",
+     "lab_plan": "PL2",
+     "because": "defective",
+     "into": "C2",
+     "runs": [
+      "RN3",
+      "RN4"
+     ],
+     "why": "tally.py and agreement.py compared the coding pass with integers while the record stores it as text, so PL2's runs RN3 and RN4 counted no coding and computed no agreement; their zeros say nothing about the systems. PL3 repeated the same estimands on the same codings with the scripts fixed; its analysis text says the same steps in other words. tally.py kept only codings whose pass equals the integer 1, but the record stores pass as the string '1', so it counted no coding: every count in RN3 is 0. agreement.py compared pass with the integers 1 and 2, but the record stores pass as strings, so it found no dossier coded by both coders and computed no agreement. The repeat words the analysis differently, as the person who confirmed the void read: PL2 planned \"Run 1: claimset-code/score-arrangers-2026/tally.py counts pass-1 systems: in total; with each code; by method and availability; by platform and method; by pricing and method; and, among systems with notated output for a user-chosen instrumentation, by input (score or other) and method; it also counts systems without exactly one method or availability code, as a check. Run 2: claimset-code/score-arrangers-2026/agreement.py gives, per code, Krippendorff's alpha (two coders, nominal) and the share of dossiers agreed, over the dossiers both coders coded.\"; PL3 planned \"Run 1: claimset-code/score-arrangers-2026/tally.py (fixed) counts pass-1 systems: total; with each code; by method and availability; by platform and method; by pricing and method; among notated chosen-instrument systems by input and method; and systems without exactly one method or availability code. Run 2: agreement.py (fixed) gives per code Krippendorff's alpha (two coders, nominal) and share of dossiers agreed over the dossiers both coders coded.\".",
+     "statement": "PL2's planned counts and coder agreement for the 36 systems: void, a script bug gave zeros; repeated by PL3 (C2)."
+    }
+   ]
+  },
+  "study": "score-arrangers-2026",
+  "ext": {
+   "review": {
+    "protocol": {
+     "question": "As of November 2026, which software products, online services and research systems can automatically or semi-automatically arrange existing music into a notated score that musicians read, for a set of instruments the user chooses; and for each, what input it takes, what notation it outputs, whether it uses machine learning or rules, and whether it works interactively or in real time?",
+     "sources": [
+      "WebSearch (Claude's web search tool, standard mode)"
+     ],
+     "include": [
+      "An arranging system (TM1): software product, online service or research system that automatically or semi-automatically produces instrumental parts from existing musical material",
+      "Arranges for more than one instrument, or offers a choice of instrument, or produces notation (so the codebook can apply)",
+      "Public information about it is available at retrieval (product page, documentation, paper or forum account)"
+     ],
+     "exclude": [
+      "Human arranging services (people hired to arrange)",
+      "Syntonic Labs products",
+      "Audio-only generators that output finished audio with no parts (e.g. text-to-song)",
+      "Pure transcription (audio to notation of the same parts) with no arranging",
+      "Notation editors and DAWs without an arranging function",
+      "Generators of a single line only (melody, chord progression or drum loop) with no arrangement across instruments",
+      "Pages that name no system (general articles), except roundups and threads, which are used for snowballing"
+     ],
+     "period": "available or published up to 2026-11-20",
+     "lab_event": "PT1"
+    },
+    "searches": [
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "automatic music arrangement software notation",
+      "date": "2026-11-19",
+      "results": 14,
+      "lab_event": "SE1"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "AI orchestration software MusicXML",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE2"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "auto arranger score for chosen instruments",
+      "date": "2026-11-19",
+      "results": 15,
+      "lab_event": "SE3"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "AI music arranger sheet music",
+      "date": "2026-11-19",
+      "results": 17,
+      "lab_event": "SE4"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "automatic orchestration plugin notation",
+      "date": "2026-11-19",
+      "results": 12,
+      "lab_event": "SE5"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "AI arrange for ensemble sheet music",
+      "date": "2026-11-19",
+      "results": 19,
+      "lab_event": "SE6"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "MusicXML arrangement tool",
+      "date": "2026-11-19",
+      "results": 24,
+      "lab_event": "SE7"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "MuseScore plugin arrange for instruments",
+      "date": "2026-11-19",
+      "results": 17,
+      "lab_event": "SE8"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "Sibelius Arrange feature alternative",
+      "date": "2026-11-19",
+      "results": 14,
+      "lab_event": "SE9"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "Dorico orchestrate explode",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE10"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "AI choir arrangement generator",
+      "date": "2026-11-19",
+      "results": 16,
+      "lab_event": "SE11"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "AI band arrangement sheet music generator",
+      "date": "2026-11-19",
+      "results": 19,
+      "lab_event": "SE12"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "automatic orchestration deep learning symbolic music",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE13"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "automatic music arrangement neural network instruments",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE14"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "automatic piano reduction score",
+      "date": "2026-11-19",
+      "results": 18,
+      "lab_event": "SE15"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "reddit automatic arrangement software sheet music",
+      "date": "2026-11-19",
+      "results": 18,
+      "lab_event": "SE16"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "reddit AI orchestration notation software",
+      "date": "2026-11-19",
+      "results": 13,
+      "lab_event": "SE17"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "KVR auto arranger notation",
+      "date": "2026-11-19",
+      "results": 14,
+      "lab_event": "SE18"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "MuseScore forum automatic arrangement for instruments",
+      "date": "2026-11-19",
+      "results": 19,
+      "lab_event": "SE19"
+     },
+     {
+      "source": "WebSearch (Claude's web search tool, standard mode)",
+      "query": "Gearspace AI orchestration tool",
+      "date": "2026-11-19",
+      "results": 16,
+      "lab_event": "SE20"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://musosoup.com/blog/ai-sheet-music-generator",
+      "date": "2026-11-19",
+      "results": 7,
+      "lab_event": "SE21"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://gitnux.org/best/musical-arrangement-software/",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE22"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://wifitalents.com/best/musical-arrangement-software/",
+      "date": "2026-11-19",
+      "results": 10,
+      "lab_event": "SE23"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://wifitalents.com/best/music-arranging-software/",
+      "date": "2026-11-19",
+      "results": 5,
+      "lab_event": "SE24"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://www.songscription.ai/blog/best-ai-sheet-music-generators",
+      "date": "2026-11-19",
+      "results": 9,
+      "lab_event": "SE25"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://www.piano-composer-teacher-london.co.uk/ai-music-tools/",
+      "date": "2026-11-19",
+      "results": 7,
+      "lab_event": "SE26"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://www.audiocipher.com/post/ai-choir-generator",
+      "date": "2026-11-19",
+      "results": 5,
+      "lab_event": "SE27"
+     },
+     {
+      "source": "snowballing (one level) from an included roundup, read with WebFetch",
+      "query": "music software named on https://www.kvraudio.com/plugins/arranger-auto-accompaniment-composer-tools",
+      "date": "2026-11-19",
+      "results": 3,
+      "lab_event": "SE28"
+     }
+    ],
+    "flow": {
+     "identified": 361,
+     "screened": 328,
+     "excluded_screening": 208,
+     "assessed": 139,
+     "excluded_full_text": {
+      "duplicate: another page about Virtuoso, which is assessed once through its dossier": 4,
+      "duplicate: another page about capella audio2score, which is assessed once through its dossier": 2,
+      "generates new music from text prompts (Text2Score); does not arrange existing material": 1,
+      "roundup or listing used only for snowballing; names systems but is not itself a system": 9,
+      "duplicate: another page about MuseScore Arrange Parts plugin, which is assessed once through its dossier": 2,
+      "duplicate: another page about Klangio piano arrangement, which is assessed once through its dossier": 4,
+      "duplicate: another page about Songscription piano arrangement, which is assessed once through its dossier": 4,
+      "duplicate: another page about CMMR 2023 monophonic MusicXML arranger": 1,
+      "duplicate: another page about Band-in-a-Box, which is assessed once through its dossier": 5,
+      "'change instrumentation' is not described as automatic arranging; an editor feature": 1,
+      "duplicate: another page about Sibelius Arrange, which is assessed once through its dossier": 13,
+      "duplicate: another page about Dorico Explode, which is assessed once through its dossier": 11,
+      "renders choir parts the user writes as AI singing audio; does not arrange or write parts": 1,
+      "duplicate: another page about Structured multi-track accompaniment arrangement (Zhao et al.), which is assessed once through its dossier": 1,
+      "duplicate: another page about Unified symbolic arrangement (Ou et al. 2024-25), which is assessed once through its dossier": 3,
+      "duplicate: another page about SymphonyNet (Liu et al. 2022), which is assessed once through its dossier": 1,
+      "duplicate: another page about Arranger (Dong et al. 2021, automatic instrumentation), which is assessed once through its dossier": 3,
+      "duplicate: another page about Live Orchestral Piano (Crestel and Esling), which is assessed once through its dossier": 1,
+      "duplicate: another page about Lead sheet arrangement by conditional GAN (Liu and Yang 2018), which is assessed once through its dossier": 1,
+      "duplicate: another page about Instrumentation style transfer (Hung et al. 2019), which is assessed once through its dossier": 1,
+      "duplicate: another page about Piano reduction with BERT (Wong et al. 2025), which is assessed once through its dossier": 6,
+      "duplicate: another page about Audio-based piano reduction (Takamori et al. 2019), which is assessed once through its dossier": 2,
+      "duplicate: another page about Statistical piano reduction with difficulty control (Nakamura and Yoshii 2018), which is assessed once through its dossier": 2,
+      "duplicate: another page about Score-reduction arrangement framework (Huang et al. 2012), which is assessed once through its dossier": 1,
+      "duplicate: another page about vArranger, which is assessed once through its dossier": 2,
+      "duplicate: another page about ReChord, which is assessed once through its dossier": 1,
+      "duplicate: another page about Chord Dock (Arranger Mode), which is assessed once through its dossier": 2,
+      "duplicate: another page about Groovyband Live!, which is assessed once through its dossier": 1,
+      "duplicate: another page about MuseScore Explode/Implode tools, which is assessed once through its dossier": 3,
+      "duplicate: another page about Finale Explode Music, which is assessed once through its dossier": 2,
+      "duplicate: another page about Captain Plugins, which is assessed once through its dossier": 4,
+      "duplicate: another page about ACE Studio Choir Mode": 2,
+      "duplicate: another page about Scale Rider, which is assessed once through its dossier": 2,
+      "chord progression generator and player for one keys part; no arrangement across instruments": 1,
+      "duplicate: another page about nimbu, which is assessed once through its dossier": 2
+     },
+     "included": 37,
+     "other_sources": 6
+    }
+   }
+  },
+  "licence": "CC-BY-4.0",
+  "declarations": {
+   "funding": [
+    {
+     "funder": "Syntonic Labs (self-funded)"
+    }
+   ],
+   "competing_interests": "The guarantor, Ivan Svetunkov, founded Syntonic Labs, which develops Tempered Arranger, a machine-learning arranging product in the market this study scans; Syntonic Labs products were excluded from the scan."
+  },
+  "summary": "We searched the web in November 2026 for software and research systems that turn existing music into written-out parts for instruments a musician chooses, and classified the 36 we found. Most commercial tools do this with fixed rules, inside notation programs like Sibelius and Dorico or as live accompaniment keyboards and plugins, while almost all research systems use machine learning. Only one commercial product, Scorehand, a chat-based plugin for MuseScore, reads a notated score, uses machine learning, writes notation and lets the user say which instruments to write for. The study was planned in advance, and its hypothesis that no such product existed was refuted.",
+  "highlights": [
+   "C1",
+   "C2"
+  ],
+  "classification": {
+   "keywords": [
+    "automatic music arrangement",
+    "automatic orchestration",
+    "music notation software",
+    "symbolic music generation",
+    "piano reduction",
+    "auto-accompaniment software",
+    "market scan"
+   ],
+   "subfield": "openalex:subfields/1210",
+   "topics": [
+    "openalex:T11349",
+    "openalex:T13996",
+    "openalex:T11309"
+   ]
+  },
+  "id": "entrylib:2026.000015",
+  "version": 1,
+  "date": "2026-11-20",
+  "status": "active"
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "agent",
+   "name": "Claude Code",
+   "credit_roles": [
+    "conceptualization",
+    "methodology",
+    "formal_analysis",
+    "data_curation",
+    "investigation"
+   ],
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "run_period": {
+    "start": "2026-11-19",
+    "end": "2026-11-20"
+   },
+   "tools": [
+    "code_execution"
+   ],
+   "system": {
+    "name": "Claude Code"
+   },
+   "label": "research",
+   "record_source": "self_reported"
+  },
+  {
+   "id": "P2",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "positions": [
+    "supervisor",
+    "guarantor"
+   ],
+   "orcid": "0000-0001-7826-0281",
+   "credit_roles": [
+    "conceptualization",
+    "supervision"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "agent",
+   "name": "Claude Code",
+   "credit_roles": [
+    "investigation"
+   ],
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "run_period": {
+    "start": "2026-11-19",
+    "end": "2026-11-19"
+   },
+   "system": {
+    "name": "Claude Code"
+   },
+   "label": "second coder",
+   "record_source": "self_reported"
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude Opus",
+   "version": "5.5",
+   "identifier": "claude-opus-5-5",
+   "accessed": "2026-11-19"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "arranging system",
+   "kind": "entity",
+   "definition": "A software product, online service or research system that, from existing musical material (a melody, chords, a score or a performance), automatically or semi-automatically produces parts for instruments: by orchestrating, harmonising, voicing, exploding or reducing. The unit of analysis: one system, counted once across versions and editions."
+  },
+  {
+   "id": "D2",
+   "term": "notated output",
+   "kind": "concept",
+   "definition": "The system delivers its arrangement as notation a musician reads: a score or parts in standard staff notation, exported as MusicXML, PDF or a notation application's file, or written into a notation editor.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The system's own description or documentation shows the arrangement as staff notation, or exports MusicXML, PDF score/parts, or a notation-app file.",
+      "exclude": "Output only as audio, MIDI without notation, tablature or chord charts alone, or piano-roll."
+     }
+    }
+   }
+  },
+  {
+   "id": "D3",
+   "term": "user-chosen instrumentation",
+   "kind": "concept",
+   "definition": "The user selects the instruments or ensemble the arrangement is written for.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The user picks target instruments, an ensemble, or a template of instruments, and the parts are written for that choice.",
+      "exclude": "A fixed instrumentation (e.g. piano only, or a style's fixed band) the user cannot change instrument by instrument."
+     }
+    }
+   }
+  },
+  {
+   "id": "D4",
+   "term": "score input",
+   "kind": "concept",
+   "definition": "The system accepts notated music as its input.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Accepts MusicXML, or works on a score inside a notation application (which reads MusicXML).",
+      "exclude": "Accepts only audio, MIDI, chord symbols, text prompts or live playing."
+     }
+    }
+   }
+  },
+  {
+   "id": "D5",
+   "term": "ML method",
+   "kind": "concept",
+   "definition": "The arrangement is produced by a model trained on data (machine learning, neural network, LLM).",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The developer states that a trained model (machine learning, neural network, deep learning, LLM, 'AI model') generates the arrangement.",
+      "exclude": "'AI' used as a label without saying that a trained model produces the arrangement; such systems are coded unclear method."
+     }
+    }
+   }
+  },
+  {
+   "id": "D6",
+   "term": "rules method",
+   "kind": "concept",
+   "definition": "The arrangement is produced by hand-written rules, styles, templates or algorithms without a trained model.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The developer describes style files, templates, rules, voice-leading algorithms or search procedures, or an independent review does.",
+      "exclude": "Any trained model generating the arrangement."
+     }
+    }
+   }
+  },
+  {
+   "id": "D7",
+   "term": "unclear method",
+   "kind": "concept",
+   "definition": "The sources do not say whether a trained model or rules produce the arrangement.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Marketed as 'AI' or 'intelligent' with no statement of how the arrangement is produced.",
+      "exclude": "Either ML method or rules method applies."
+     }
+    }
+   }
+  },
+  {
+   "id": "D8",
+   "term": "interactive or real-time",
+   "kind": "concept",
+   "definition": "The arrangement is regenerated in response to the user's choices or playing without an offline export-import cycle.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Arrangement updates live as the user plays, changes instruments or settings, within the same session.",
+      "exclude": "A one-off batch generation the user must re-run from scratch."
+     }
+    }
+   }
+  },
+  {
+   "id": "D9",
+   "term": "commercially available",
+   "kind": "concept",
+   "definition": "Sold or licensed to the public (paid, subscription or freemium) at the date of retrieval.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "A price, subscription or purchase page exists at retrieval.",
+      "exclude": "Free open-source, free-only, discontinued, or research-only systems."
+     }
+    }
+   }
+  },
+  {
+   "id": "D10",
+   "term": "free or open-source",
+   "kind": "concept",
+   "definition": "Available to the public at no cost at retrieval.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Free download or free web use, or published code.",
+      "exclude": "Paid-only or research descriptions without public access."
+     }
+    }
+   }
+  },
+  {
+   "id": "D11",
+   "term": "research prototype",
+   "kind": "concept",
+   "definition": "Described in a research publication (paper, preprint, thesis) rather than offered as a product.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The source is a paper, preprint or thesis describing the system.",
+      "exclude": "A product whose maker also published a paper is coded by its availability as a product."
+     }
+    }
+   }
+  },
+  {
+   "id": "D12",
+   "term": "full-match arranger",
+   "kind": "concept",
+   "definition": "A commercially available arranging system, not made by Syntonic Labs, that takes score input and uses an ML method to produce notated output for a user-chosen instrumentation.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The same system is coded commercially available, score input, ML method, notated output and user-chosen instrumentation.",
+      "exclude": "Any of the five missing, or the system is a Syntonic Labs product (Tempered)."
+     }
+    }
+   }
+  },
+  {
+   "id": "D13",
+   "term": "market scan",
+   "kind": "design",
+   "definition": "A fixed set of web searches run on one or two days, each result screened against the inclusion criteria, with one level of snowballing from included roundups, then each included system coded by a fixed codebook (summative content analysis, deductive)."
+  },
+  {
+   "id": "D14",
+   "term": "one-time purchase",
+   "kind": "concept",
+   "definition": "Sold for a single payment (a perpetual licence), possibly with paid upgrades.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "A one-off price or perpetual licence is listed at retrieval.",
+      "exclude": "Subscription-only or free."
+     }
+    }
+   }
+  },
+  {
+   "id": "D15",
+   "term": "subscription",
+   "kind": "concept",
+   "definition": "Paid by recurring fee (monthly or yearly), or by credits bought repeatedly.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "A monthly or yearly price, or credit packs, listed at retrieval.",
+      "exclude": "One-off purchase only, or free."
+     }
+    }
+   }
+  },
+  {
+   "id": "D16",
+   "term": "free tier",
+   "kind": "concept",
+   "definition": "A free version or free use exists alongside paid options (freemium), or the system is wholly free.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Free plan, free version, free trial longer than a demo, or wholly free use.",
+      "exclude": "Time-limited trial of a paid product only, or no public access."
+     }
+    }
+   }
+  },
+  {
+   "id": "D17",
+   "term": "price not stated",
+   "kind": "concept",
+   "definition": "No price could be found in the dossier.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "The dossier shows no price or pricing model.",
+      "exclude": "Any price or pricing model stated."
+     }
+    }
+   }
+  },
+  {
+   "id": "D18",
+   "term": "desktop application",
+   "kind": "concept",
+   "definition": "Runs as a standalone application on a computer.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Downloadable standalone program for Windows, macOS or Linux.",
+      "exclude": "Runs only inside another host (plugin) or in a browser."
+     }
+    }
+   }
+  },
+  {
+   "id": "D19",
+   "term": "web service",
+   "kind": "concept",
+   "definition": "Used in a web browser or through an online API.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Browser-based app or online API.",
+      "exclude": "Desktop-only or plugin-only."
+     }
+    }
+   }
+  },
+  {
+   "id": "D20",
+   "term": "DAW plugin",
+   "kind": "concept",
+   "definition": "Runs inside a digital audio workstation (VST, AU, AAX, MIDI effect).",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Offered in a DAW plugin format.",
+      "exclude": "Notation-app plugins; standalone apps only."
+     }
+    }
+   }
+  },
+  {
+   "id": "D21",
+   "term": "notation-app plugin or feature",
+   "kind": "concept",
+   "definition": "Runs inside a notation application (Sibelius, Dorico, MuseScore, Finale) as a plugin or built-in feature.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "A notation application's own feature, or a plugin for one.",
+      "exclude": "Exports to a notation app without running inside it."
+     }
+    }
+   }
+  },
+  {
+   "id": "D22",
+   "term": "mobile app",
+   "kind": "concept",
+   "definition": "Runs as an app on a phone or tablet.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "iOS, iPadOS or Android app.",
+      "exclude": "Mobile web only (coded web service)."
+     }
+    }
+   }
+  },
+  {
+   "id": "D23",
+   "term": "code or model only",
+   "kind": "concept",
+   "definition": "Available only as source code, a library or model weights, with no packaged application.",
+   "ext": {
+    "qualitative": {
+     "code": {
+      "include": "Published code, library or weights only.",
+      "exclude": "Any packaged application, plugin or web service."
+     }
+    }
+   }
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "statement": "Among the 36 [[D1:arranging system]]s found by a [[D13:market scan]] of 20 fixed web queries with one level of snowballing (19 November 2026), one [[D9:commercially available]] system not made by Syntonic Labs, the MuseScore plugin AiHud Notation Copilot (renamed Scorehand), is a [[D12:full-match arranger]]: it takes [[D4:score input]] (the open score, sent as MusicXML), uses an [[D5:ML method]] (a server-side AI model) and writes [[D2:notated output]] for a section the user names ([[D3:user-chosen instrumentation]]); so the planned hypothesis that no such commercial system exists was not supported.",
+   "about": {
+    "subject": "D1",
+    "relation": "none is",
+    "object": "D12",
+    "comparator": null,
+    "conditions": [
+     "D9"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_qual",
+     "evidence": "E1",
+     "results": [
+      "E1.R1",
+      "E1.R2"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H1",
+    "outcome": "not_supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-19T20:12:59Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "qualitative",
+    "parameters": {
+     "sample": "Every result returned by the 20 fixed queries in claimset-code/score-arrangers-2026/queries.txt (WebSearch, standard mode, run once each on 2026-11-19/20), plus systems named in included roundup pages (one level of snowballing); each included system captured as one dossier source (its pages' text) and coded once; no stopping before all results are screened",
+     "unit": "one arranging system = one dossier source"
+    },
+    "quantities": {
+     "n": {
+      "variable": "count: n"
+     },
+     "n_all": {
+      "variable": "count: n_all"
+     }
+    },
+    "supported": "n == 0 and n_all == 0",
+    "not_supported": "n >= 1 or n_all >= 1",
+    "verdict": "computed",
+    "runs": 1,
+    "lab_plan": "PL1"
+   },
+   "scope": {
+    "setting": "software products, online services and research systems that arrange existing music for instruments",
+    "period": "retrieved 19 November 2026",
+    "data_type": "developers' product pages, documentation and papers, as rendered by WebFetch and WebSearch snippets",
+    "population": "arranging systems returned by 20 fixed web queries (WebSearch, standard mode) and one level of snowballing from included roundups",
+    "conditions": [
+     "full-match criteria judged from each system's dossier by one coder"
+    ],
+    "excludes": [
+     "Syntonic Labs products",
+     "human arranging services",
+     "systems not returned by the 20 queries or the roundups they led to"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B38",
+     "note": "Zhu (2023) surveys AI music generation tools, both research projects and commercial applications, and their functional features; it does not ask which take a notated score and write notated parts for instruments the user chooses."
+    }
+   ],
+   "name": "One commercial ML score arranger",
+   "summary": "Of the systems found, only Scorehand takes a score, uses machine learning and writes notated parts for instruments the user names.",
+   "ext": {
+    "qualitative": {
+     "counts": {
+      "n": {
+       "codes": [
+        "D12"
+       ],
+       "unit": "source"
+      },
+      "n_all": {
+       "codes": [
+        "D9",
+        "D4",
+        "D5",
+        "D2",
+        "D3"
+       ],
+       "match": "all",
+       "unit": "source"
+      }
+     }
+    }
+   },
+   "verifiability": "audit_only",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C2",
+   "statement": "Of the 36 [[D1:arranging system]]s coded from a [[D13:market scan]] (19 November 2026), 19 give [[D2:notated output]], 10 a [[D3:user-chosen instrumentation]] and 9 take [[D4:score input]]; 17 use an [[D5:ML method]], 16 a [[D6:rules method]] and 3 an [[D7:unclear method]]; of the 15 [[D9:commercially available]] systems, 11 are rules-based, 3 unclear and 1 ML, while 15 of the 17 [[D11:research prototype]]s are ML; among systems with notated output for a user-chosen instrumentation, 2 take score input with an ML method (one commercial, one research), 3 take score input with rules, and 4 take other input (tables T1–T6 of evidence E3); on 9 dossiers coded independently by a second agent, Krippendorff's alpha was 1 for 17 codes and 0.62–0.78 for 4 (rules method, ML method, free tier, price not stated), each from one disagreement of 9 (tables T7–T8); table T1 of evidence E2 lists each system with its link and codes.",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_qual",
+     "evidence": "E2",
+     "results": [
+      "E2.T1"
+     ]
+    },
+    {
+     "kind": "empirical_qual",
+     "evidence": "E3",
+     "results": [
+      "E3.T1.r1",
+      "E3.T2.r1",
+      "E3.T2.r2",
+      "E3.T2.r3",
+      "E3.T2.r4",
+      "E3.T2.r5",
+      "E3.T2.r6",
+      "E3.T2.r7",
+      "E3.T2.r8",
+      "E3.T2.r9",
+      "E3.T2.r10",
+      "E3.T2.r11",
+      "E3.T2.r12",
+      "E3.T2.r13",
+      "E3.T2.r14",
+      "E3.T2.r15",
+      "E3.T2.r16",
+      "E3.T2.r17",
+      "E3.T2.r18",
+      "E3.T2.r19",
+      "E3.T2.r20",
+      "E3.T2.r21",
+      "E3.T3.r1",
+      "E3.T3.r2",
+      "E3.T3.r3",
+      "E3.T3.r4",
+      "E3.T3.r5",
+      "E3.T3.r6",
+      "E3.T3.r7",
+      "E3.T3.r8",
+      "E3.T3.r9",
+      "E3.T4.r1",
+      "E3.T4.r2",
+      "E3.T4.r3",
+      "E3.T4.r4",
+      "E3.T4.r5",
+      "E3.T4.r6",
+      "E3.T4.r7",
+      "E3.T4.r8",
+      "E3.T4.r9",
+      "E3.T4.r10",
+      "E3.T4.r11",
+      "E3.T4.r12",
+      "E3.T4.r13",
+      "E3.T4.r14",
+      "E3.T4.r15",
+      "E3.T4.r16",
+      "E3.T4.r17",
+      "E3.T4.r18",
+      "E3.T5.r1",
+      "E3.T5.r2",
+      "E3.T5.r3",
+      "E3.T5.r4",
+      "E3.T5.r5",
+      "E3.T5.r6",
+      "E3.T5.r7",
+      "E3.T5.r8",
+      "E3.T5.r9",
+      "E3.T5.r10",
+      "E3.T5.r11",
+      "E3.T5.r12",
+      "E3.T6.r1",
+      "E3.T6.r2",
+      "E3.T6.r3",
+      "E3.T6.r4",
+      "E3.T6.r5",
+      "E3.T6.r6"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-19T21:00:27Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "total": {
+      "variable": "number of arranging systems",
+      "table": true,
+      "run": 1
+     },
+     "by_code": {
+      "variable": "systems with code",
+      "table": true,
+      "run": 1
+     },
+     "method_avail": {
+      "variable": "systems by method and availability",
+      "table": true,
+      "run": 1
+     },
+     "platform": {
+      "variable": "systems by platform and method",
+      "table": true,
+      "run": 1
+     },
+     "pricing": {
+      "variable": "systems by pricing and method",
+      "table": true,
+      "run": 1
+     },
+     "target": {
+      "variable": "notated chosen-instrument systems by input and method",
+      "table": true,
+      "run": 1
+     },
+     "alpha": {
+      "variable": "Krippendorff alpha",
+      "table": true,
+      "run": 2
+     },
+     "agreed": {
+      "variable": "share of dossiers agreed",
+      "table": true,
+      "run": 2
+     }
+    },
+    "runs": 2,
+    "lab_plan": "PL3"
+   },
+   "limitations": [
+    "L1"
+   ],
+   "scope": {
+    "setting": "software products, online services and research systems that arrange existing music for instruments",
+    "period": "retrieved 19 November 2026",
+    "data_type": "developers' product pages, documentation and papers, as rendered by WebFetch and WebSearch snippets",
+    "population": "the 36 arranging systems included by the scan (19 products, 17 research systems)",
+    "conditions": [
+     "counts of pass-1 codings by one agent",
+     "agreement on a random 25% sample (seed 2026) coded independently by a second agent"
+    ],
+    "excludes": [
+     "Syntonic Labs products",
+     "human arranging services",
+     "systems not returned by the 20 queries or the roundups they led to"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B39",
+     "note": "Wang et al. (2024) review intelligent music generation systems, classing arrangement generation among their purposes and the systems by method (rule-based, Markov models, deep learning, evolutionary computation)."
+    },
+    {
+     "type": "extends",
+     "reference": "B38",
+     "note": "Zhu (2023) surveys AI music generation tools, including commercial applications, and lists their functional features, without counting arranging systems by notated output, score input, instrument choice or method."
+    }
+   ],
+   "about": {
+    "subject": "D1",
+    "relation": "counted by code",
+    "object": "D2",
+    "comparator": null,
+    "conditions": [
+     "D13"
+    ]
+   },
+   "name": "Arranging systems by method and features",
+   "summary": "Of 36 systems, commercial ones are mostly rules-based and research ones mostly machine learning; 19 write notation, 10 let the user choose instruments, 9 take a score as input; the two coders agreed closely.",
+   "verifiability": "audit_only",
+   "verifiability_flags": []
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "qual",
+   "description": "Lab runs RN2 under plan PL1. Design: Market scan (D13): run the 20 fixed queries in claimset-code/score-arrangers-2026/queries.txt once each (WebSearch, standard mode; 15 general and research queries, 5 aimed at Reddit, KVR, MuseScore and Gearspace forums), screen every result against the inclusion criteria, snowball one level from included roundups and forum threads, build one dossier per included system from its own pages (product page, pricing page, documentation, paper), capture it, and code it with the codebook D2-D12 and D14-D23 (pass 1, this agent). A second agent, registered before it starts and working in its own log, independently codes (pass 2) a 25% random sample of the dossiers (Python random.sample, seed 2026, over dossier IDs in capture order). Syntonic Labs products and human arranging services are excluded. Analysis: Count pass-1 dossiers coded full-match arranger (D12), and dossiers coded all five of commercially available, score input, ML method, notated output and user-chosen instrumentation; the two counts check each other. The verdict is computed by the tool's count over pass 1.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN2"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "count: n",
+     "value": 1,
+     "conditions": {
+      "unit": "source",
+      "distinct_by": "source",
+      "code": "D12"
+     }
+    },
+    {
+     "id": "R2",
+     "variable": "count: n_all",
+     "value": 1,
+     "conditions": {
+      "unit": "source",
+      "distinct_by": "source"
+     }
+    }
+   ],
+   "artefacts": [
+    "A37",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "cases": [
+     "D9"
+    ],
+    "procedure": [
+     "D13"
+    ],
+    "lens": [
+     "D12"
+    ]
+   },
+   "execution": {
+    "code_version": "98b73b3476b0011c509c0c9fc48967bcc9164f1e",
+    "software": {
+     "python": "3.13.18",
+     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
+    },
+    "notes": "Counted by the counter of the lab record tool (claimset 0.44.6, claimset/lab/count.py) from the codings in force, recorded with the run (codings.json); the code version is the study's code checkout, not the counter's."
+   },
+   "data_sources": [
+    "document"
+   ],
+   "analytic_approach": "content_analysis",
+   "n_participants_or_cases": 36
+  },
+  {
+   "id": "E2",
+   "profile": "qual",
+   "description": "Per-system criteria table: each of the 36 arranging systems the market scan included, with the link its dossier was built from and a tick (✓) under each criterion pass 1 coded it with. Exploratory run RN8 tabulated the same codings that plan PL3 counts; it decides nothing and adds no count.",
+   "lab_runs": [
+    "RN8"
+   ],
+   "data_origin": "primary",
+   "preregistered": false,
+   "artefacts": [
+    "A40"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Criteria each arranging system meets (✓), with the link its dossier was built from (lab run RN8). Columns: D12 full-match arranger; D2 notated output; D3 user-chosen instrumentation; D4 score input; D5 ML method; D6 rules method; D7 unclear method; D8 interactive or real-time; D9 commercially available; D10 free or open-source; D11 research prototype; D14 one-time purchase; D15 subscription; D16 free tier; D17 price not stated; D18 desktop application; D19 web service; D20 DAW plugin; D21 notation-app plugin or feature; D22 mobile app; D23 code or model only",
+     "row_labels": [
+      "system",
+      "link"
+     ],
+     "columns": [
+      "D12",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "D8",
+      "D9",
+      "D10",
+      "D11",
+      "D14",
+      "D15",
+      "D16",
+      "D17",
+      "D18",
+      "D19",
+      "D20",
+      "D21",
+      "D22",
+      "D23"
+     ],
+     "artefact": "A40",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Sibelius Arrange (Avid Sibelius)",
+        "https://www.avid.com/sibelius/music-arranging"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        "✓",
+        null
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Dorico Explode (Steinberg Dorico)",
+        "https://www.steinberg.help/r/dorico-pro/5.1/en/dorico/topics/glossary/exploding_g.html"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        "✓",
+        null
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "MuseScore Explode/Implode tools",
+        "https://musescore.org/en/node/291410"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "MuseScore Arrange Parts plugin",
+        "https://musescore.org/project/arrange-parts"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Finale Explode Music (MakeMusic Finale)",
+        "https://www.finalemusic.com/?p=5036"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "capella audio2score pro",
+        "https://www.capella-software.com/us/index.cfm/products/capella-audio2score-pro"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "Songscription piano arrangement",
+        "https://www.songscription.ai/piano-arrangement-generator"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "Klangio piano arrangement (Piano2Notes, Melody Scanner)",
+        "https://klang.io/?p=38689"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "Virtuoso (AI sheet music generator)",
+        "https://www.producthunt.com/products/virtuoso-2/launches"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "AiHud Notation Copilot / Scorehand (MuseScore plugin)",
+        "https://musescore.org/en/project/aihud-notation-copilot"
+       ],
+       "values": [
+        "✓",
+        "✓",
+        "✓",
+        "✓",
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "Band-in-a-Box (PG Music)",
+        "https://www.pgmusic.com/bbmac.features.htm"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "vArranger",
+        "https://www.kvraudio.com/product/varranger-by-varranger"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "ReChord",
+        "https://www.kvraudio.com/product/rechord-by-rechord"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "Chord Dock (Arranger Mode), k2get",
+        "https://www.kvraudio.com/product/chord-dock-performance-by-k2get"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "Groovyband Live!",
+        "https://www.kvraudio.com/product/groovyband-live-by-groovyband-live/news"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Scale Rider (Interloud Audio)",
+        "https://www.kvraudio.com/product/scale-rider-by-interloud-audio"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r17",
+       "label": [
+        "nimbu",
+        "https://www.kvraudio.com/product/nimbu-4-40-by-nimbu"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r18",
+       "label": [
+        "Captain Plugins (Mixed In Key)",
+        "https://mixedinkey.com/captain-plugins/"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r19",
+       "label": [
+        "ImagineArt AI Sheet Music Generator",
+        "https://www.imagine.art/music-studio/sheet-music-generator"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r20",
+       "label": [
+        "Arranger: automatic instrumentation by part separation (Dong et al. 2021)",
+        "https://www.arxiv.org/pdf/2107.05916v1"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r21",
+       "label": [
+        "SymphonyNet (Liu et al. 2022)",
+        "https://arxiv.org/pdf/2205.05448"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r22",
+       "label": [
+        "Live Orchestral Piano (Crestel and Esling)",
+        "https://arxiv.org/pdf/1609.01203v1"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r23",
+       "label": [
+        "Wind band orchestration with user-specified instrumentation (Nabeoka, Nakamura, Yoshii 2023)",
+        "https://zenodo.org/records/10113109/files/cmmr2023_3c-P5.pdf"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        "✓",
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r24",
+       "label": [
+        "Unified symbolic music arrangement (Ou et al. 2024-25)",
+        "https://arxiv.org/html/2408.15176v5"
+       ],
+       "values": [
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r25",
+       "label": [
+        "Structured multi-track accompaniment arrangement (Zhao, Xia, Wang, Wang 2024)",
+        "https://arxiv.org/html/2310.16334v4"
+       ],
+       "values": [
+        null,
+        "✓",
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r26",
+       "label": [
+        "Audio-to-symbolic piano arrangement (Wang et al. 2022)",
+        "https://arxiv.org/pdf/2112.15110"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r27",
+       "label": [
+        "Lead sheet arrangement by conditional GAN (Liu and Yang 2018)",
+        "https://arxiv.org/abs/1807.11161v1"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r28",
+       "label": [
+        "Instrumentation change by disentangled timbre representations (Hung et al. 2019)",
+        "https://arxiv.org/abs/1905.13567v1"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r29",
+       "label": [
+        "Audio-based piano reduction score (Takamori et al. 2019)",
+        "https://staff.aist.go.jp/m.goto/PAPER/MMM2019takamori.pdf"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r30",
+       "label": [
+        "Piano reduction with BERT (Wong et al. 2025)",
+        "https://arxiv.org/html/2512.21324v1"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r31",
+       "label": [
+        "Piano reduction by merged-output HMM (Nakamura and Sagayama 2015)",
+        "https://eita-nakamura.github.io/articles/Nakamura-Sagayama_AutomaticPianoReduction_ICMC2015.pdf"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r32",
+       "label": [
+        "Statistical piano reduction with difficulty control (Nakamura and Yoshii 2018)",
+        "https://ar5iv.arxiv.org/html/1808.05006"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r33",
+       "label": [
+        "Score-reduction arrangement framework (Huang, Chiu, Shan 2012)",
+        "https://ir.lib.nycu.edu.tw/bitstream/11536/15708/1/000300400200008.pdf"
+       ],
+       "values": [
+        null,
+        "✓",
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r34",
+       "label": [
+        "Difficulty-aware neural band-to-piano score arrangement (2022)",
+        "https://aminer.org/pub/62b54a135aee126c0fe7c8c2/difficulty-aware-neural-band-to-piano-score-arrangement-based-on-note-and"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      },
+      {
+       "id": "r35",
+       "label": [
+        "Automated arrangements for sets of monophonic instruments (McCloskey et al. 2023)",
+        "https://zenodo.org/records/10113103"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓"
+       ]
+      },
+      {
+       "id": "r36",
+       "label": [
+        "Auto Arranger Based on Deep Learning Methods (student project, Shumnov)",
+        "https://abstracts.societyforscience.org/Home/PrintPdf/16858"
+       ],
+       "values": [
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        "✓",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+       ]
+      }
+     ]
+    }
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "procedure": [
+     "D13"
+    ],
+    "lens": [
+     "D2",
+     "D3",
+     "D4",
+     "D5",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D10",
+     "D11",
+     "D14",
+     "D15",
+     "D16",
+     "D17",
+     "D18",
+     "D19",
+     "D20",
+     "D21",
+     "D22",
+     "D23"
+    ]
+   },
+   "availability": {
+    "level": "public"
+   }
+  },
+  {
+   "id": "E3",
+   "profile": "qual",
+   "description": "Lab runs RN5, RN6 under plan PL3. Design: Same market scan, dossiers SR1-SR36 and codings as PL2 (pass 1 by AC1 on all 36; pass 2 by AC3 on the 9 sampled dossiers SR7, SR8, SR20, SR21, SR29, SR31, SR33, SR34, SR36). Re-runs PL2's analysis with the scripts fixed after PL2's runs RN3 and RN4 counted nothing (deviations DV1, DV2). Analysis: Run 1: claimset-code/score-arrangers-2026/tally.py (fixed) counts pass-1 systems: total; with each code; by method and availability; by platform and method; by pricing and method; among notated chosen-instrument systems by input and method; and systems without exactly one method or availability code. Run 2: agreement.py (fixed) gives per code Krippendorff's alpha (two coders, nominal) and share of dossiers agreed over the dossiers both coders coded.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN5",
+    "RN6"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "number of arranging systems, dossiers coded by both coders (lab runs RN5, RN6)",
+     "row_labels": [],
+     "columns": [
+      "number of arranging systems",
+      "dossiers coded by both coders"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [],
+       "values": [
+        36,
+        9
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T2",
+     "description": "systems with code, Krippendorff alpha, share of dossiers agreed by code (lab runs RN5, RN6)",
+     "row_labels": [
+      "code"
+     ],
+     "columns": [
+      "systems with code",
+      "Krippendorff alpha",
+      "share of dossiers agreed"
+     ],
+     "artefact": "A37",
+     "rows_file": "A39",
+     "n_rows": 21
+    },
+    {
+     "id": "T3",
+     "description": "systems by method and availability by method, availability (lab runs RN5)",
+     "row_labels": [
+      "method",
+      "availability"
+     ],
+     "columns": [
+      "systems by method and availability"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "ML method",
+        "commercially available"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "ML method",
+        "free or open-source"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "ML method",
+        "research prototype"
+       ],
+       "values": [
+        15
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "rules method",
+        "commercially available"
+       ],
+       "values": [
+        11
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "rules method",
+        "free or open-source"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "rules method",
+        "research prototype"
+       ],
+       "values": [
+        2
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "unclear method",
+        "commercially available"
+       ],
+       "values": [
+        3
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "unclear method",
+        "free or open-source"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "unclear method",
+        "research prototype"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T4",
+     "description": "systems by platform and method by platform, method (lab runs RN5)",
+     "row_labels": [
+      "platform",
+      "method"
+     ],
+     "columns": [
+      "systems by platform and method"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "desktop application",
+        "ML method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "desktop application",
+        "rules method"
+       ],
+       "values": [
+        7
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "desktop application",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "web service",
+        "ML method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "web service",
+        "rules method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "web service",
+        "unclear method"
+       ],
+       "values": [
+        3
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "DAW plugin",
+        "ML method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "DAW plugin",
+        "rules method"
+       ],
+       "values": [
+        4
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "DAW plugin",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "notation-app plugin or feature",
+        "ML method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "notation-app plugin or feature",
+        "rules method"
+       ],
+       "values": [
+        5
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "notation-app plugin or feature",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "mobile app",
+        "ML method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "mobile app",
+        "rules method"
+       ],
+       "values": [
+        2
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "mobile app",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "code or model only",
+        "ML method"
+       ],
+       "values": [
+        6
+       ]
+      },
+      {
+       "id": "r17",
+       "label": [
+        "code or model only",
+        "rules method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r18",
+       "label": [
+        "code or model only",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T5",
+     "description": "systems by pricing and method by pricing, method (lab runs RN5)",
+     "row_labels": [
+      "pricing",
+      "method"
+     ],
+     "columns": [
+      "systems by pricing and method"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "one-time purchase",
+        "ML method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "one-time purchase",
+        "rules method"
+       ],
+       "values": [
+        8
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "one-time purchase",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "subscription",
+        "ML method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "subscription",
+        "rules method"
+       ],
+       "values": [
+        2
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "subscription",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "free tier",
+        "ML method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "free tier",
+        "rules method"
+       ],
+       "values": [
+        5
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "free tier",
+        "unclear method"
+       ],
+       "values": [
+        3
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "price not stated",
+        "ML method"
+       ],
+       "values": [
+        16
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "price not stated",
+        "rules method"
+       ],
+       "values": [
+        5
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "price not stated",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T6",
+     "description": "notated chosen-instrument systems by input and method by input, method (lab runs RN5)",
+     "row_labels": [
+      "input",
+      "method"
+     ],
+     "columns": [
+      "notated chosen-instrument systems by input and method"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "score input",
+        "ML method"
+       ],
+       "values": [
+        2
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "score input",
+        "rules method"
+       ],
+       "values": [
+        3
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "score input",
+        "unclear method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "other input",
+        "ML method"
+       ],
+       "values": [
+        2
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "other input",
+        "rules method"
+       ],
+       "values": [
+        1
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "other input",
+        "unclear method"
+       ],
+       "values": [
+        1
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T7",
+     "description": "systems without exactly one code of a group by group (lab runs RN5)",
+     "row_labels": [
+      "group"
+     ],
+     "columns": [
+      "systems without exactly one code of a group"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "availability"
+       ],
+       "values": [
+        3
+       ]
+      }
+     ],
+     "artefact": "A37"
+    },
+    {
+     "id": "T8",
+     "description": "systems without exactly one code of a group by group; pass: 2 (lab runs RN6)",
+     "conditions": {
+      "pass": 2
+     },
+     "row_labels": [
+      "group"
+     ],
+     "columns": [
+      "systems without exactly one code of a group"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "method"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "availability"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ],
+     "artefact": "A37"
+    }
+   ],
+   "artefacts": [
+    "A37",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A39"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "procedure": [
+     "D13"
+    ],
+    "lens": [
+     "D2",
+     "D3",
+     "D4",
+     "D5",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D10",
+     "D11",
+     "D14",
+     "D15",
+     "D16",
+     "D17",
+     "D18",
+     "D19",
+     "D20",
+     "D21",
+     "D22",
+     "D23"
+    ]
+   },
+   "execution": {
+    "code_version": "d9d1f8e4ed6ee77dedfef2f7fad9fca0dce1e8ee",
+    "software": {
+     "python": "3.13.18",
+     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
+    }
+   },
+   "data_sources": [
+    "document"
+   ],
+   "analytic_approach": "content_analysis",
+   "n_participants_or_cases": 36
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "deviation",
+   "statement": "Lab plan PL2 was made void (DC3): a defect made its runs (RN3, RN4) meaningless. DV1: tally.py kept only codings whose pass equals the integer 1, but the record stores pass as the string '1', so it counted no coding: every count in RN3 is 0. DV2: agreement.py compared pass with the integers 1 and 2, but the record stores pass as strings, so it found no dossier coded by both coders and computed no agreement. This claim is from plan PL3, which repeats it with the same analysis, reworded (both texts are in the exploration summary), and decision rule on the same data. PL3 was planned after the void runs and before its own, so what the void runs showed could have shaped it. The void runs returned only zeros for every count and no agreement values; no coding or count of any system was visible in them, so they showed nothing that could have shaped PL3 beyond the bug itself. The dossiers were coded after PL2 was planned and before PL3 was; the codebook, the codings and the analysis are those PL2 fixed, unchanged in PL3.",
+   "affects": [
+    "C2"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "partial",
+   "mitigation_evidence": "E3"
+  },
+  {
+   "id": "L2",
+   "category": "sampling",
+   "statement": "The scan covers only systems that 20 fixed web queries (and one level of snowballing) returned on 19 November 2026; products seen in an earlier ad-hoc search but not returned (Orb Composer, LANDR Composer, InstaComposer, Muse, RapidComposer, Texturium) are not in the counts, and a negative or positive count holds for this frame only.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "none"
+  },
+  {
+   "id": "L3",
+   "category": "measurement",
+   "statement": "Dossiers were built from WebFetch renderings of each page by a language model and from search snippets, not from byte copies of the pages; a feature a page states could be missed or misrendered, and several dossiers (Dorico, Chord Dock, Finale, research papers) rest on snippets or summaries.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "none"
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A1",
+   "kind": "data",
+   "version": "sha256:8ba50597a5450ad83e43555106b27c18f9110f3a851e13c9a782c4e654a7aad1",
+   "description": "Dossier: Sibelius Arrange (Avid Sibelius) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR1 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.avid.com/sibelius/music-arranging",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:8ba50597a5450ad83e43555106b27c18f9110f3a851e13c9a782c4e654a7aad1"
+   },
+   "reference": "B1"
+  },
+  {
+   "id": "A2",
+   "kind": "data",
+   "version": "sha256:62f9e97896e949dcb37819c89da373f33ebd96d211fba058897ec7aac0d15980",
+   "description": "Dossier: Dorico Explode (Steinberg Dorico) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR2 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.steinberg.help/r/dorico-pro/5.1/en/dorico/topics/glossary/exploding_g.html",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:62f9e97896e949dcb37819c89da373f33ebd96d211fba058897ec7aac0d15980"
+   },
+   "reference": "B2"
+  },
+  {
+   "id": "A3",
+   "kind": "data",
+   "version": "sha256:3f04f7e65efd8f7783809fd691eb2095af3899b84d2b915d38ecb05a22caf217",
+   "description": "Dossier: MuseScore Explode/Implode tools (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR3 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://musescore.org/en/node/291410",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:3f04f7e65efd8f7783809fd691eb2095af3899b84d2b915d38ecb05a22caf217"
+   },
+   "reference": "B3"
+  },
+  {
+   "id": "A4",
+   "kind": "data",
+   "version": "sha256:db2cbe5f276819dde5bf07f044a0051a9b81438f3166a0f534933b382846ce9e",
+   "description": "Dossier: MuseScore Arrange Parts plugin (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR4 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://musescore.org/project/arrange-parts",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:db2cbe5f276819dde5bf07f044a0051a9b81438f3166a0f534933b382846ce9e"
+   },
+   "reference": "B4"
+  },
+  {
+   "id": "A5",
+   "kind": "data",
+   "version": "sha256:0c5ed9e0aecfd4a950f0a5dc2a9abf2126cab23098ba52250c08d1e8eee7fc04",
+   "description": "Dossier: Finale Explode Music (MakeMusic Finale) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR5 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.finalemusic.com/?p=5036",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:0c5ed9e0aecfd4a950f0a5dc2a9abf2126cab23098ba52250c08d1e8eee7fc04"
+   },
+   "reference": "B5"
+  },
+  {
+   "id": "A6",
+   "kind": "data",
+   "version": "sha256:b498d61f3a30afc5a307adf9372b602ddce999d3b361b7ea2573e36579d6f638",
+   "description": "Dossier: capella audio2score pro (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR6 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.capella-software.com/us/index.cfm/products/capella-audio2score-pro",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:b498d61f3a30afc5a307adf9372b602ddce999d3b361b7ea2573e36579d6f638"
+   },
+   "reference": "B6"
+  },
+  {
+   "id": "A7",
+   "kind": "data",
+   "version": "sha256:775aac099f7d3241ff06831f1a5179eefa0bdab52914bab74dc7a4593b750a57",
+   "description": "Dossier: Songscription piano arrangement (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR7 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.songscription.ai/piano-arrangement-generator",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:775aac099f7d3241ff06831f1a5179eefa0bdab52914bab74dc7a4593b750a57"
+   },
+   "reference": "B7"
+  },
+  {
+   "id": "A8",
+   "kind": "data",
+   "version": "sha256:a16fa6d0f394f53fd9a48f9b9aed7ef641f57126ba56b9850f8cd96f526a686b",
+   "description": "Dossier: Klangio piano arrangement (Piano2Notes, Melody Scanner) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR8 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://klang.io/?p=38689",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:a16fa6d0f394f53fd9a48f9b9aed7ef641f57126ba56b9850f8cd96f526a686b"
+   },
+   "reference": "B8"
+  },
+  {
+   "id": "A9",
+   "kind": "data",
+   "version": "sha256:2f130b57a56f54353ee1703c1e3cf2db5a9ab480fd330d80fc21fb81138106e1",
+   "description": "Dossier: Virtuoso (AI sheet music generator) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR9 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.producthunt.com/products/virtuoso-2/launches",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:2f130b57a56f54353ee1703c1e3cf2db5a9ab480fd330d80fc21fb81138106e1"
+   },
+   "reference": "B9"
+  },
+  {
+   "id": "A10",
+   "kind": "data",
+   "version": "sha256:689e301a378ab3b8d3caea4e70e01ce60462d88a97db3fa88c044f560fb1e708",
+   "description": "Dossier: AiHud Notation Copilot / Scorehand (MuseScore plugin) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR10 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://musescore.org/en/project/aihud-notation-copilot",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:689e301a378ab3b8d3caea4e70e01ce60462d88a97db3fa88c044f560fb1e708"
+   },
+   "reference": "B10"
+  },
+  {
+   "id": "A11",
+   "kind": "data",
+   "version": "sha256:f6b570444dab1f7eaa798a0fba735b195223e557c0c2b7a0dafcff544d82f160",
+   "description": "Dossier: Band-in-a-Box (PG Music) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR11 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.pgmusic.com/bbmac.features.htm",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:f6b570444dab1f7eaa798a0fba735b195223e557c0c2b7a0dafcff544d82f160"
+   },
+   "reference": "B11"
+  },
+  {
+   "id": "A12",
+   "kind": "data",
+   "version": "sha256:719157618137fbeb92f04a2b083c604726166a1aa3387b82420b8fd5a8c33cc3",
+   "description": "Dossier: vArranger (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR12 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/varranger-by-varranger",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:719157618137fbeb92f04a2b083c604726166a1aa3387b82420b8fd5a8c33cc3"
+   },
+   "reference": "B12"
+  },
+  {
+   "id": "A13",
+   "kind": "data",
+   "version": "sha256:4ef2bfa26de300e3041fc7453238587273e254788ef087ff069d6b7138740f65",
+   "description": "Dossier: ReChord (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR13 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/rechord-by-rechord",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:4ef2bfa26de300e3041fc7453238587273e254788ef087ff069d6b7138740f65"
+   },
+   "reference": "B13"
+  },
+  {
+   "id": "A14",
+   "kind": "data",
+   "version": "sha256:ff3cf8fabbdb1cbbefce47d7d4018fd88ec9a688ec987d71a049c23afefb25bd",
+   "description": "Dossier: Chord Dock (Arranger Mode), k2get (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR14 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/chord-dock-performance-by-k2get",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:ff3cf8fabbdb1cbbefce47d7d4018fd88ec9a688ec987d71a049c23afefb25bd"
+   },
+   "reference": "B14"
+  },
+  {
+   "id": "A15",
+   "kind": "data",
+   "version": "sha256:0fcd9ad7f6f8807affae24e81ed4bd264e9b005fdbfa25f3bd27a60bf9662d58",
+   "description": "Dossier: Groovyband Live! (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR15 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/groovyband-live-by-groovyband-live/news",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:0fcd9ad7f6f8807affae24e81ed4bd264e9b005fdbfa25f3bd27a60bf9662d58"
+   },
+   "reference": "B15"
+  },
+  {
+   "id": "A16",
+   "kind": "data",
+   "version": "sha256:6d1f5488df9ce0a01007fd7583dfcaf4802cbbc51e13c7cf09cc684b13553263",
+   "description": "Dossier: Scale Rider (Interloud Audio) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR16 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/scale-rider-by-interloud-audio",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:6d1f5488df9ce0a01007fd7583dfcaf4802cbbc51e13c7cf09cc684b13553263"
+   },
+   "reference": "B16"
+  },
+  {
+   "id": "A17",
+   "kind": "data",
+   "version": "sha256:ef020d4355c7bbc0d5c81125cb6e5ec1e1230850286cd38981f359c830225c3a",
+   "description": "Dossier: nimbu (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR17 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.kvraudio.com/product/nimbu-4-40-by-nimbu",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:ef020d4355c7bbc0d5c81125cb6e5ec1e1230850286cd38981f359c830225c3a"
+   },
+   "reference": "B17"
+  },
+  {
+   "id": "A18",
+   "kind": "data",
+   "version": "sha256:6b96db8444f6cb233fa02bda0768d5feff55d58e56621addaad9954f143bcce7",
+   "description": "Dossier: Captain Plugins (Mixed In Key) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR18 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://mixedinkey.com/captain-plugins/",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:6b96db8444f6cb233fa02bda0768d5feff55d58e56621addaad9954f143bcce7"
+   },
+   "reference": "B18"
+  },
+  {
+   "id": "A19",
+   "kind": "data",
+   "version": "sha256:03107fd23df74275cf5981fa7a37dfa583cd6edfa3d7cec178bdee39f8cf2346",
+   "description": "Dossier: ImagineArt AI Sheet Music Generator (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR19 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.imagine.art/music-studio/sheet-music-generator",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:03107fd23df74275cf5981fa7a37dfa583cd6edfa3d7cec178bdee39f8cf2346"
+   },
+   "reference": "B19"
+  },
+  {
+   "id": "A20",
+   "kind": "data",
+   "version": "sha256:eb921ce7b157994e83f3a15af7129616b1ed305d3af9fc085638ad7c47a3f95c",
+   "description": "Dossier: Arranger: automatic instrumentation by part separation (Dong et al. 2021) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR20 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://www.arxiv.org/pdf/2107.05916v1",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:eb921ce7b157994e83f3a15af7129616b1ed305d3af9fc085638ad7c47a3f95c"
+   },
+   "reference": "B20"
+  },
+  {
+   "id": "A21",
+   "kind": "data",
+   "version": "sha256:624b8ec9dbe0ac291a1f2330189c6a1261a063e31df61db28444dc0d293e801c",
+   "description": "Dossier: SymphonyNet (Liu et al. 2022) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR21 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/pdf/2205.05448",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:624b8ec9dbe0ac291a1f2330189c6a1261a063e31df61db28444dc0d293e801c"
+   },
+   "reference": "B21"
+  },
+  {
+   "id": "A22",
+   "kind": "data",
+   "version": "sha256:0dc6a104cbb5e63119b0b116582da05d65316fcc4f98fd7a7878451b1ee08b7b",
+   "description": "Dossier: Live Orchestral Piano (Crestel and Esling) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR22 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/pdf/1609.01203v1",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:0dc6a104cbb5e63119b0b116582da05d65316fcc4f98fd7a7878451b1ee08b7b"
+   },
+   "reference": "B22"
+  },
+  {
+   "id": "A23",
+   "kind": "data",
+   "version": "sha256:4fba6ba867ef07256db913a41a7b06547e139770130b4cd6b9b8fa9ae36c5adb",
+   "description": "Dossier: Wind band orchestration with user-specified instrumentation (Nabeoka, Nakamura, Yoshii 2023) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR23 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://zenodo.org/records/10113109/files/cmmr2023_3c-P5.pdf",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:4fba6ba867ef07256db913a41a7b06547e139770130b4cd6b9b8fa9ae36c5adb"
+   },
+   "reference": "B23"
+  },
+  {
+   "id": "A24",
+   "kind": "data",
+   "version": "sha256:88c0dd94c37ef4f00b614393d540b46dbd1b7cc8dd71db9cc62fb94a4cbcc917",
+   "description": "Dossier: Unified symbolic music arrangement (Ou et al. 2024-25) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR24 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/html/2408.15176v5",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:88c0dd94c37ef4f00b614393d540b46dbd1b7cc8dd71db9cc62fb94a4cbcc917"
+   },
+   "reference": "B24"
+  },
+  {
+   "id": "A25",
+   "kind": "data",
+   "version": "sha256:ffec1aed33a79dffd44f6b1a920310fe4a9c87905d3d4b2b969c7b08560176e1",
+   "description": "Dossier: Structured multi-track accompaniment arrangement (Zhao, Xia, Wang, Wang 2024) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR25 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/html/2310.16334v4",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:ffec1aed33a79dffd44f6b1a920310fe4a9c87905d3d4b2b969c7b08560176e1"
+   },
+   "reference": "B37"
+  },
+  {
+   "id": "A26",
+   "kind": "data",
+   "version": "sha256:87caf0bef6271734248fc9c3ae2de3b97e00524b835caa222784289873ed0ccd",
+   "description": "Dossier: Audio-to-symbolic piano arrangement (Wang et al. 2022) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR26 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/pdf/2112.15110",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:87caf0bef6271734248fc9c3ae2de3b97e00524b835caa222784289873ed0ccd"
+   },
+   "reference": "B26"
+  },
+  {
+   "id": "A27",
+   "kind": "data",
+   "version": "sha256:3e33ded98e86dd995770cc77b3ba9f908a1bda0984ee58fa63cd3954843a792b",
+   "description": "Dossier: Lead sheet arrangement by conditional GAN (Liu and Yang 2018) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR27 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/abs/1807.11161v1",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:3e33ded98e86dd995770cc77b3ba9f908a1bda0984ee58fa63cd3954843a792b"
+   },
+   "reference": "B27"
+  },
+  {
+   "id": "A28",
+   "kind": "data",
+   "version": "sha256:eed3fa3d78c8d96cc1ad69685b5401ce5bed387f158889f3bc2004eb7b75d3f4",
+   "description": "Dossier: Instrumentation change by disentangled timbre representations (Hung et al. 2019) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR28 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/abs/1905.13567v1",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:eed3fa3d78c8d96cc1ad69685b5401ce5bed387f158889f3bc2004eb7b75d3f4"
+   },
+   "reference": "B28"
+  },
+  {
+   "id": "A29",
+   "kind": "data",
+   "version": "sha256:027901fb6e60b811f87921530f9b20dbfadc5d4258617d73b7c088756c8bb9fd",
+   "description": "Dossier: Audio-based piano reduction score (Takamori et al. 2019) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR29 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://staff.aist.go.jp/m.goto/PAPER/MMM2019takamori.pdf",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:027901fb6e60b811f87921530f9b20dbfadc5d4258617d73b7c088756c8bb9fd"
+   },
+   "reference": "B29"
+  },
+  {
+   "id": "A30",
+   "kind": "data",
+   "version": "sha256:0f5a7fde92e93eb2e3a4032f95c0c74ce634ba446c35940379e55dd7be466266",
+   "description": "Dossier: Piano reduction with BERT (Wong et al. 2025) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR30 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://arxiv.org/html/2512.21324v1",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:0f5a7fde92e93eb2e3a4032f95c0c74ce634ba446c35940379e55dd7be466266"
+   },
+   "reference": "B30"
+  },
+  {
+   "id": "A31",
+   "kind": "data",
+   "version": "sha256:65134539878082eaf7e5266e77041ef905c93be37ec637a272ffb2466945ed3c",
+   "description": "Dossier: Piano reduction by merged-output HMM (Nakamura and Sagayama 2015) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR31 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://eita-nakamura.github.io/articles/Nakamura-Sagayama_AutomaticPianoReduction_ICMC2015.pdf",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:65134539878082eaf7e5266e77041ef905c93be37ec637a272ffb2466945ed3c"
+   },
+   "reference": "B31"
+  },
+  {
+   "id": "A32",
+   "kind": "data",
+   "version": "sha256:0370dd44a50796ce6993a079a22ae8c5a0bc15be49b691f2ee0c814f86948bee",
+   "description": "Dossier: Statistical piano reduction with difficulty control (Nakamura and Yoshii 2018) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR32 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://ar5iv.arxiv.org/html/1808.05006",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:0370dd44a50796ce6993a079a22ae8c5a0bc15be49b691f2ee0c814f86948bee"
+   },
+   "reference": "B32"
+  },
+  {
+   "id": "A33",
+   "kind": "data",
+   "version": "sha256:900966358bc409e194d6710a6baa2cb7fef521898fc6d40ebb7bfcd86fc9ef2c",
+   "description": "Dossier: Score-reduction arrangement framework (Huang, Chiu, Shan 2012) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR33 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://ir.lib.nycu.edu.tw/bitstream/11536/15708/1/000300400200008.pdf",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:900966358bc409e194d6710a6baa2cb7fef521898fc6d40ebb7bfcd86fc9ef2c"
+   },
+   "reference": "B33"
+  },
+  {
+   "id": "A34",
+   "kind": "data",
+   "version": "sha256:1c426f9e184dca38beaf41038d085cf7a2c12bf65283897078927111410c208a",
+   "description": "Dossier: Difficulty-aware neural band-to-piano score arrangement (2022) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR34 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://aminer.org/pub/62b54a135aee126c0fe7c8c2/difficulty-aware-neural-band-to-piano-score-arrangement-based-on-note-and",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:1c426f9e184dca38beaf41038d085cf7a2c12bf65283897078927111410c208a"
+   },
+   "reference": "B34"
+  },
+  {
+   "id": "A35",
+   "kind": "data",
+   "version": "sha256:2387c4b5e6d7d79ccbf011d748896e257313804a9bad8f0606b5b5c36327dcab",
+   "description": "Dossier: Automated arrangements for sets of monophonic instruments (McCloskey et al. 2023) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR35 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://zenodo.org/records/10113103",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:2387c4b5e6d7d79ccbf011d748896e257313804a9bad8f0606b5b5c36327dcab"
+   },
+   "reference": "B35"
+  },
+  {
+   "id": "A36",
+   "kind": "data",
+   "version": "sha256:8c7cd6efd2f962bd7e8e1470e1ab0de1aa38a8eac7effb8d07557aa0ffb03707",
+   "description": "Dossier: Auto Arranger Based on Deep Learning Methods (student project, Shumnov) (text/plain), saved by hand on 2026-11-19; recorded in the lab record as SR36 on 2026-11-19. Written by others. One dossier per arranging system: the agent's transcription of WebFetch renderings and WebSearch snippets of the system's pages, with their URLs (see decision DC1).",
+   "uri": "https://abstracts.societyforscience.org/Home/PrintPdf/16858",
+   "availability": {
+    "level": "author_only",
+    "reason": "legal",
+    "content_hash": "sha256:8c7cd6efd2f962bd7e8e1470e1ab0de1aa38a8eac7effb8d07557aa0ffb03707"
+   },
+   "reference": "B36"
+  },
+  {
+   "id": "A37",
+   "kind": "data",
+   "uri": "https://entrylib.org/p/2026.000015/v1/files/files/score-arrangers-2026.results.csv",
+   "version": "sha256:03f4e500d0916e5fe5582146e22cff9ee62b3b19193a0b83422f717bdd48545d",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Every result of the lab record (1702 results of 8 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+   "columns": [
+    {
+     "name": "lab_result",
+     "dimension": "the result event of the lab record"
+    },
+    {
+     "name": "run",
+     "dimension": "the lab run that produced it"
+    },
+    {
+     "name": "quantity",
+     "dimension": "the quantity, as the run's script named it"
+    },
+    {
+     "name": "conditions",
+     "dimension": "the result's conditions, as JSON"
+    },
+    {
+     "name": "value",
+     "variable": "the value of the quantity, as JSON, at full precision"
+    }
+   ]
+  },
+  {
+   "id": "A38",
+   "kind": "lab_record",
+   "uri": "https://github.com/Syntonic-Labs/research/blob/137e635a1ed758328e70405eb955109de8828354/lab/lab.jsonl",
+   "version": "sha256:2b829845ebe85f8e95be38ce5cc8ea345d261285412015d4a39c446bda32808d",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.22, begun 2026-11-19; exported with claimset 0.44.10)."
+  },
+  {
+   "id": "A39",
+   "kind": "data",
+   "uri": "https://entrylib.org/p/2026.000015/v1/files/files/score-arrangers-2026.E3.T2.csv",
+   "version": "sha256:753f57fcf6eab446762a35c7ac54efebbb60676a1732578a63f7b83ebc25cc0e",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The 21 rows of table E3.T2: systems with code, Krippendorff alpha, share of dossiers agreed by code (lab runs RN5, RN6)",
+   "columns": [
+    {
+     "name": "code",
+     "dimension": "code"
+    },
+    {
+     "name": "systems with code",
+     "variable": "systems with code"
+    },
+    {
+     "name": "Krippendorff alpha",
+     "variable": "Krippendorff alpha"
+    },
+    {
+     "name": "share of dossiers agreed",
+     "variable": "share of dossiers agreed"
+    }
+   ]
+  },
+  {
+   "id": "A40",
+   "kind": "data",
+   "uri": "https://entrylib.org/p/2026.000015/v1/files/files/score-arrangers-2026.systems.csv",
+   "version": "sha256:75148ef8f19aebac2bef9525acc458b73f3d72b4f8527970acdc1bed5f611825",
+   "description": "One row per arranging system (36): its name, the link its dossier was built from, and a tick (✓) under each criterion the system was coded with in pass 1, blank otherwise; criteria run from full match to output, input, method, availability, pricing and platform. Written by lab run RN8 from the codings in force.",
+   "licence": "CC-BY-4.0",
+   "columns": [
+    {
+     "name": "system",
+     "dimension": "system"
+    },
+    {
+     "name": "link",
+     "dimension": "link"
+    },
+    {
+     "name": "full-match arranger",
+     "variable": "D12"
+    },
+    {
+     "name": "notated output",
+     "variable": "D2"
+    },
+    {
+     "name": "user-chosen instrumentation",
+     "variable": "D3"
+    },
+    {
+     "name": "score input",
+     "variable": "D4"
+    },
+    {
+     "name": "ML method",
+     "variable": "D5"
+    },
+    {
+     "name": "rules method",
+     "variable": "D6"
+    },
+    {
+     "name": "unclear method",
+     "variable": "D7"
+    },
+    {
+     "name": "interactive or real-time",
+     "variable": "D8"
+    },
+    {
+     "name": "commercially available",
+     "variable": "D9"
+    },
+    {
+     "name": "free or open-source",
+     "variable": "D10"
+    },
+    {
+     "name": "research prototype",
+     "variable": "D11"
+    },
+    {
+     "name": "one-time purchase",
+     "variable": "D14"
+    },
+    {
+     "name": "subscription",
+     "variable": "D15"
+    },
+    {
+     "name": "free tier",
+     "variable": "D16"
+    },
+    {
+     "name": "price not stated",
+     "variable": "D17"
+    },
+    {
+     "name": "desktop application",
+     "variable": "D18"
+    },
+    {
+     "name": "web service",
+     "variable": "D19"
+    },
+    {
+     "name": "DAW plugin",
+     "variable": "D20"
+    },
+    {
+     "name": "notation-app plugin or feature",
+     "variable": "D21"
+    },
+    {
+     "name": "mobile app",
+     "variable": "D22"
+    },
+    {
+     "name": "code or model only",
+     "variable": "D23"
+    }
+   ],
+   "availability": {
+    "level": "public"
+   }
+  }
+ ],
+ "references": [
+  {
+   "id": "B1",
+   "target": "https://www.avid.com/sibelius/music-arranging",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A1",
+     "lab_event": "SC362"
+    }
+   }
+  },
+  {
+   "id": "B2",
+   "target": "https://www.steinberg.help/r/dorico-pro/5.1/en/dorico/topics/glossary/exploding_g.html",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A2",
+     "lab_event": "SC363"
+    }
+   }
+  },
+  {
+   "id": "B3",
+   "target": "https://musescore.org/en/node/291410",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A3",
+     "lab_event": "SC364"
+    }
+   }
+  },
+  {
+   "id": "B4",
+   "target": "https://musescore.org/project/arrange-parts",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A4",
+     "lab_event": "SC365"
+    }
+   }
+  },
+  {
+   "id": "B5",
+   "target": "https://www.finalemusic.com/?p=5036",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A5",
+     "lab_event": "SC366"
+    }
+   }
+  },
+  {
+   "id": "B6",
+   "target": "https://www.capella-software.com/us/index.cfm/products/capella-audio2score-pro",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A6",
+     "lab_event": "SC367"
+    }
+   }
+  },
+  {
+   "id": "B7",
+   "target": "https://www.songscription.ai/piano-arrangement-generator",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A7",
+     "lab_event": "SC368"
+    }
+   }
+  },
+  {
+   "id": "B8",
+   "target": "https://klang.io/?p=38689",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A8",
+     "lab_event": "SC369"
+    }
+   }
+  },
+  {
+   "id": "B9",
+   "target": "https://www.producthunt.com/products/virtuoso-2/launches",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A9",
+     "lab_event": "SC370"
+    }
+   }
+  },
+  {
+   "id": "B10",
+   "target": "https://musescore.org/en/project/aihud-notation-copilot",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A10",
+     "lab_event": "SC371"
+    }
+   }
+  },
+  {
+   "id": "B11",
+   "target": "https://www.pgmusic.com/bbmac.features.htm",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A11",
+     "lab_event": "SC372"
+    }
+   }
+  },
+  {
+   "id": "B12",
+   "target": "https://www.kvraudio.com/product/varranger-by-varranger",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A12",
+     "lab_event": "SC373"
+    }
+   }
+  },
+  {
+   "id": "B13",
+   "target": "https://www.kvraudio.com/product/rechord-by-rechord",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A13",
+     "lab_event": "SC374"
+    }
+   }
+  },
+  {
+   "id": "B14",
+   "target": "https://www.kvraudio.com/product/chord-dock-performance-by-k2get",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A14",
+     "lab_event": "SC375"
+    }
+   }
+  },
+  {
+   "id": "B15",
+   "target": "https://www.kvraudio.com/product/groovyband-live-by-groovyband-live/news",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A15",
+     "lab_event": "SC376"
+    }
+   }
+  },
+  {
+   "id": "B16",
+   "target": "https://www.kvraudio.com/product/scale-rider-by-interloud-audio",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A16",
+     "lab_event": "SC377"
+    }
+   }
+  },
+  {
+   "id": "B17",
+   "target": "https://www.kvraudio.com/product/nimbu-4-40-by-nimbu",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A17",
+     "lab_event": "SC378"
+    }
+   }
+  },
+  {
+   "id": "B18",
+   "target": "https://mixedinkey.com/captain-plugins/",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A18",
+     "lab_event": "SC379"
+    }
+   }
+  },
+  {
+   "id": "B19",
+   "target": "https://www.imagine.art/music-studio/sheet-music-generator",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A19",
+     "lab_event": "SC380"
+    }
+   }
+  },
+  {
+   "id": "B20",
+   "target": "https://www.arxiv.org/pdf/2107.05916v1",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A20",
+     "lab_event": "SC381"
+    }
+   }
+  },
+  {
+   "id": "B21",
+   "target": "https://arxiv.org/pdf/2205.05448",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A21",
+     "lab_event": "SC382"
+    }
+   }
+  },
+  {
+   "id": "B22",
+   "target": "https://arxiv.org/pdf/1609.01203v1",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A22",
+     "lab_event": "SC383"
+    }
+   }
+  },
+  {
+   "id": "B23",
+   "target": "https://zenodo.org/records/10113109/files/cmmr2023_3c-P5.pdf",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A23",
+     "lab_event": "SC384"
+    }
+   }
+  },
+  {
+   "id": "B24",
+   "target": "https://arxiv.org/html/2408.15176v5",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A24",
+     "lab_event": "SC385"
+    }
+   }
+  },
+  {
+   "id": "B26",
+   "target": "https://arxiv.org/pdf/2112.15110",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A26",
+     "lab_event": "SC387"
+    }
+   }
+  },
+  {
+   "id": "B27",
+   "target": "https://arxiv.org/abs/1807.11161v1",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A27",
+     "lab_event": "SC388"
+    }
+   }
+  },
+  {
+   "id": "B28",
+   "target": "https://arxiv.org/abs/1905.13567v1",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A28",
+     "lab_event": "SC389"
+    }
+   }
+  },
+  {
+   "id": "B29",
+   "target": "https://staff.aist.go.jp/m.goto/PAPER/MMM2019takamori.pdf",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A29",
+     "lab_event": "SC390"
+    }
+   }
+  },
+  {
+   "id": "B30",
+   "target": "https://arxiv.org/html/2512.21324v1",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A30",
+     "lab_event": "SC391"
+    }
+   }
+  },
+  {
+   "id": "B31",
+   "target": "https://eita-nakamura.github.io/articles/Nakamura-Sagayama_AutomaticPianoReduction_ICMC2015.pdf",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A31",
+     "lab_event": "SC392"
+    }
+   }
+  },
+  {
+   "id": "B32",
+   "target": "https://ar5iv.arxiv.org/html/1808.05006",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A32",
+     "lab_event": "SC393"
+    }
+   }
+  },
+  {
+   "id": "B33",
+   "target": "https://ir.lib.nycu.edu.tw/bitstream/11536/15708/1/000300400200008.pdf",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A33",
+     "lab_event": "SC394"
+    }
+   }
+  },
+  {
+   "id": "B34",
+   "target": "https://aminer.org/pub/62b54a135aee126c0fe7c8c2/difficulty-aware-neural-band-to-piano-score-arrangement-based-on-note-and",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A34",
+     "lab_event": "SC395"
+    }
+   }
+  },
+  {
+   "id": "B35",
+   "target": "https://zenodo.org/records/10113103",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A35",
+     "lab_event": "SC396"
+    }
+   }
+  },
+  {
+   "id": "B36",
+   "target": "https://abstracts.societyforscience.org/Home/PrintPdf/16858",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A36",
+     "lab_event": "SC397"
+    }
+   }
+  },
+  {
+   "id": "B37",
+   "target": "https://www.proceedings.com/content/079/079017-3245open.pdf",
+   "id_type": "url",
+   "ext": {
+    "review": {
+     "read": "secondary",
+     "checked_on": "2026-11-19",
+     "artefact": "A25",
+     "lab_event": "SC398"
+    }
+   }
+  },
+  {
+   "id": "B38",
+   "target": "2308.12982",
+   "id_type": "arxiv"
+  },
+  {
+   "id": "B39",
+   "target": "2211.09124",
+   "id_type": "arxiv"
+  }
+ ],
+ "extensions": {
+  "qualitative": "0.1",
+  "review": "0.1"
+ }
+}
