@@ -1,0 +1,325 @@
+{
+ "validator": "claimset 0.44.12",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W32",
+    "where": "references:B1",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W32",
+    "where": "references:B2",
+    "message": "no archived copy of the page: the claimset holds a captured copy (the artefact naming this reference, by its hash); give archive_uri if the page can be archived"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B19.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B30.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B31.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C25.about.subject",
+    "message": "D3 (variable) is part of the study the claim rests on but no setup of its evidence (E25) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C25.about.comparator",
+    "message": "D9 (variable) is part of the study the claim rests on but no setup of its evidence (E25) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C26.about.subject",
+    "message": "D5 (variable) is part of the study the claim rests on but no setup of its evidence (E25) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C26.about.comparator",
+    "message": "D10 (variable) is part of the study the claim rests on but no setup of its evidence (E25) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C27.about.subject",
+    "message": "D5 (variable) is part of the study the claim rests on but no setup of its evidence (E26) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C28.about.subject",
+    "message": "D5 (variable) is part of the study the claim rests on but no setup of its evidence (E25, E26) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C29.about.subject",
+    "message": "D3 (variable) is part of the study the claim rests on but no setup of its evidence (E27) names it"
+   },
+   {
+    "rule": "W28",
+    "where": "claims:C29.about.comparator",
+    "message": "D9 (variable) is part of the study the claim rests on but no setup of its evidence (E27) names it"
+   },
+   {
+    "rule": "W44",
+    "where": "claims:C15.statement",
+    "message": "the formula $H(s) = \\Gamma\\left(\\frac{1.5}{s}\\right)…$ is too long for a sentence: set it on a line of its own ($$…$$), as a model's equations and long expressions are (§8 rule 6); in a sentence it cannot break across lines"
+   },
+   {
+    "rule": "W44",
+    "where": "claims:C18.statement",
+    "message": "the formula $\\frac{4}{\\pi}\\arctan\\frac{\\mathcal{R}(\\…$ is too long for a sentence: set it on a line of its own ($$…$$), as a model's equations and long expressions are (§8 rule 6); in a sentence it cannot break across lines"
+   },
+   {
+    "rule": "W9",
+    "where": "artefacts:A28.licence",
+    "message": "recommended: state the artefact's licence (SPDX identifier)"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M1.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "models:M2.weights",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C1.statement",
+    "message": "cited result E1.R1 = 0 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C2.statement",
+    "message": "cited result E2.R1 = 6.231e-40 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C3.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C4.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "S1",
+    "where": "claims:C5.statement",
+    "message": "statement may contain more than one sentence or assertion"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C5.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C6.statement",
+    "message": "cited result E6.R1 = 1.817e-40 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "S1",
+    "where": "claims:C10.statement",
+    "message": "statement may contain more than one sentence or assertion"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C10.statement",
+    "message": "1, 2, 8 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C11.statement",
+    "message": "cited result E8.R1 = 1.11e-16 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "S1",
+    "where": "claims:C12.statement",
+    "message": "statement may contain more than one sentence or assertion"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C12.statement",
+    "message": "may hold more than one claim (semicolon; explanation 'hence'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C12.statement",
+    "message": "1 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C15.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "S1",
+    "where": "claims:C16.statement",
+    "message": "statement may contain more than one sentence or assertion"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C16.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C16.statement",
+    "message": "2 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C17.statement",
+    "message": "may hold more than one claim (semicolon; side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "S1",
+    "where": "claims:C18.statement",
+    "message": "statement may contain more than one sentence or assertion"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C18.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C18.statement",
+    "message": "cited result E16.R1 = 5.705e-23 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C18.statement",
+    "message": "0.75 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C19.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C19.statement",
+    "message": "cited result E20.R1 = 1.54e-41 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W17",
+    "where": "claims:C19.statement",
+    "message": "6 in the statement match no recorded result, table cell, test parameter, scope condition or referenced definition: record the number as a result (or the setting in the scope), or check it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C20.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W12",
+    "where": "claims:C20.statement",
+    "message": "cited result E17.R1 = 3.886e-10 does not appear in the statement at the stated precision; check the number, or cite only the results the statement reports"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C21.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'whereas'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C21.statement",
+    "message": "repeats 12 values of the tables it cites (1.12, 1.16, 1.00, 1.04, 1.51, 1.63, 2.02, 2.07, 1.34, 1.38, 0.96, 1.01): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C22.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C23.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C24.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C24.statement",
+    "message": "repeats 7 values of the tables it cites (0.021, 0, 2.385, 6.280, 50.2, 266, 37): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C25.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'while'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C25.statement",
+    "message": "repeats 9 values of the tables it cites (0.57, 0.33, 0.93, 0.92, 0.79, 0.40, 0.34, 1.01, 0.29): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C26.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C26.statement",
+    "message": "repeats 7 values of the tables it cites (0.22, 1.20, 0.76, 1.46, 0.97, 0.16, 0.10): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C27.statement",
+    "message": "may hold more than one claim (semicolon; contrast 'whereas'; parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C27.statement",
+    "message": "repeats 15 values of the tables it cites (3.19, 2.91, 2.52, 1.97, 2.08, 1.77, 1.53, 0.90, 1.60, 2.51, 2.21, 1.19, 1.12, 1.09, 1.29): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C28.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C28.statement",
+    "message": "cites results of E25, E26: if the statement reports a result of each, it may hold more than one claim; split it if one part could be true and another false"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C29.statement",
+    "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W24",
+    "where": "claims:C29.statement",
+    "message": "repeats 8 values of the tables it cites (5.15, 4.68, 2.19, 1.85, 1.92, 1.38, 0.36, 0.27): state the pattern the paper concludes and cite the table or rows, repeating a value only when the conclusion turns on it; a claim that only retells a table is removed and the table cited where it is used (§3.4)"
+   },
+   {
+    "rule": "W3",
+    "where": "paper.contribution_record",
+    "message": "contribution record is partial"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/2613"
+ }
+}
