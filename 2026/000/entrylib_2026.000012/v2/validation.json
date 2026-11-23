@@ -1,0 +1,185 @@
+{
+ "validator": "claimset 0.44.13",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W14",
+    "where": "references:B20.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B24.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C54",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C55",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C56",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C57",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W61",
+    "where": "claims",
+    "message": "C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43, C44, C45, C46, C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C57, C58, C59 have no name: give each claim a name, what its statement says in a few words, as the heading of a result does (§3.3); readers find their way by them"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D1.definition",
+    "message": "names D2, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D5.definition",
+    "message": "names D9, D10, D11, D17, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D6.definition",
+    "message": "names D9, D10, D11, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D7.definition",
+    "message": "names D12, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D12.definition",
+    "message": "names D17, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D18.definition",
+    "message": "names D19, D20, D21, D22, D23, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D24.definition",
+    "message": "names D27, D28, D29, D30, D31, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D25.definition",
+    "message": "names D33, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W58",
+    "where": "definitions:D26.definition",
+    "message": "names D34, defined after it: list definitions in the order a reader needs them, what the paper is about first and in full, a term built on another after it (§3.2)"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C3.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C4.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C11.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C32.statement",
+    "message": "may hold more than one claim (side clause): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C36.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C37.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C38.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C40.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C54.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C55.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C56.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C57.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C59.statement",
+    "message": "cites results of E2, E8: if the statement reports a result of each, it may hold more than one claim; split it if one part could be true and another false"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C34,C35,C53",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P2.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.orcid",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P4.credit_roles",
+    "message": "recommended field missing"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/1803"
+ }
+}
