@@ -1,0 +1,90 @@
+{
+ "validator": "claimset 0.44.16",
+ "spec": "0.44",
+ "screening": "screening-1",
+ "submission": {
+  "errors": [],
+  "warnings": [
+   {
+    "rule": "W14",
+    "where": "references:B15.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W14",
+    "where": "references:B19.id_type",
+    "message": "a printed reference without identifier: give the cited work's identifier (doi, arxiv, …)"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C35",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C41",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C42",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C43",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W25",
+    "where": "claims:C50",
+    "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C27.statement",
+    "message": "may hold more than one claim (parenthesis): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C35.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C37.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W22",
+    "where": "claims:C50.statement",
+    "message": "may hold more than one claim (contrast 'but'): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+   },
+   {
+    "rule": "W6",
+    "where": "claims:C2,C4,C14,C15,C16,C17,C18,C19,C20,C21",
+    "message": "these claims share an identical scope; check that each scope fits its own claim"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P2.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P3.credit_roles",
+    "message": "recommended field missing"
+   },
+   {
+    "rule": "W1",
+    "where": "contributors:P4.credit_roles",
+    "message": "recommended field missing"
+   }
+  ]
+ },
+ "classifier": "OpenAlex/bert-base-multilingual-cased-finetuned-openalex-topic-classification-title-abstract@7856c776a1d10ae58ee91045af0776807910de96",
+ "subfield": {
+  "chosen_by": "guarantor",
+  "classifier": "openalex:subfields/1803"
+ }
+}
