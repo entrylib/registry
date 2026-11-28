@@ -1,0 +1,2472 @@
+{
+ "schema_version": "0.45",
+ "paper": {
+  "title": "Naïve newsvendor adjustments: are they always detrimental?",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "subfield": "openalex:subfields/1803",
+   "keywords": [
+    "newsvendor problem",
+    "judgemental adjustment",
+    "demand chasing",
+    "pull-to-centre effect",
+    "inventory control",
+    "model misspecification"
+   ],
+   "topics": [
+    "openalex:T11161",
+    "openalex:T10328",
+    "openalex:T11182"
+   ]
+  },
+  "summary": "Managers who order perishable stock often adjust the order that the textbook newsvendor formula suggests, either towards last period's demand (demand chasing) or towards average demand (pull-to-centre). Earlier studies treat both habits as mistakes. This paper asks whether they can help when the textbook order rests on an imperfect demand forecast. In simulations with 500 demand series, when a forecasting model of the right form was fitted to little data, modest adjustment reduced the profit loss of the textbook order by up to 5.1% over the first 90 periods. The gain shrank as data accumulated and turned into a loss on longer histories, and heavy demand chasing lost profit throughout. Profit was more sensitive to the amount of demand chasing than to the amount of pull-to-centre. When the forecasting model left out part of the demand process, or assumed normal noise when the noise was heavier-tailed, adjustment improved profit even with long histories, and pull-to-centre was the more useful of the two. A simple method that chooses the two adjustment weights by maximising past profit was tested on four products of a grocery store: it improved out-of-sample profit for every product, with each of five forecasting methods. The results come from one simulated demand process and one small real data set, and the gains under misspecification were judged from plots without statistical tests.",
+  "contributions": [
+   "C1",
+   "C4",
+   "C5",
+   "C10",
+   "C14",
+   "C17",
+   "C18",
+   "C19"
+  ],
+  "highlights": [
+   "C1",
+   "C4",
+   "C5",
+   "C10",
+   "C19"
+  ],
+  "sections": [
+   {
+    "title": "When the DGP is known",
+    "claims": [
+     "C1",
+     "C2",
+     "C3",
+     "C4",
+     "C5",
+     "C6",
+     "C7",
+     "C8",
+     "C9"
+    ]
+   },
+   {
+    "title": "When the model is misspecified",
+    "claims": [
+     "C10",
+     "C11",
+     "C12",
+     "C13",
+     "C14",
+     "C15",
+     "C16",
+     "C17",
+     "C18"
+    ]
+   },
+   {
+    "title": "Tuning algorithm",
+    "claims": [
+     "C19",
+     "C20",
+     "C21"
+    ]
+   }
+  ],
+  "published_as": {
+   "id_type": "arxiv",
+   "id": "2209.11611",
+   "version": "v1",
+   "corrections": [
+    {
+     "kind": "correction",
+     "field": "C20.statement",
+     "where": "Section 5.3, text on Table 3",
+     "printed": "In all four cases, the achieved service level with tuning is much closer to the target one than the one without tuning.",
+     "recorded": "Closer to the target for products A, B and C, and equally distant from it for product D.",
+     "reason": "For product D, Table 3 gives a target of 0.23, a pre-tuning service level of 0.17 and a tuned service level of 0.29: both are 0.06 from the target. The numbers of Table 3 are correct as printed; the sentence overstated them."
+    }
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  },
+  "autonomy": "human_assisted",
+  "contribution_record": "partial",
+  "origin": "native",
+  "id": "entrylib:2026.000018",
+  "version": 1,
+  "date": "2026-11-28",
+  "status": "active"
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "human",
+   "name": "Congzheng Liu",
+   "orcid": "0000-0002-7036-7006",
+   "affiliation": "Department of Management Science, Lancaster University",
+   "positions": [
+    "guarantor"
+   ]
+  },
+  {
+   "id": "P2",
+   "type": "human",
+   "name": "Adam N. Letchford",
+   "orcid": "0000-0002-3191-5006",
+   "affiliation": "Department of Management Science, Lancaster University",
+   "positions": [
+    "coauthor"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "orcid": "0000-0001-7826-0281",
+   "affiliation": "Department of Management Science, Lancaster University",
+   "positions": [
+    "coauthor"
+   ]
+  },
+  {
+   "id": "P4",
+   "type": "agent",
+   "name": "Claude",
+   "label": "claimset preparation",
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "writing_original_draft"
+   ],
+   "ai_tasks": [
+    {
+     "task": "writing",
+     "extent": "substantial"
+    },
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "web_search",
+    "code_execution",
+    "file_access"
+   ],
+   "record_source": "harness"
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude Opus",
+   "version": "5.5",
+   "identifier": "claude-opus-5-5",
+   "weights": "api_only",
+   "accessed": "2026-11-28"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "newsvendor problem",
+   "short": "NVP",
+   "kind": "concept",
+   "source": "B1",
+   "definition": "Single-product, single-period stochastic inventory problem. The demand $\\tilde{d}$ over the selling period is a random variable with cumulative distribution function $F$. The product is bought before the period at unit price $v$ and sold during it at unit price $p$; each unit left over at the end of the period incurs a holding cost $c_h$, and each unit of unsatisfied demand a shortage cost $c_s$. For an order quantity $x$ and realised demand $d$, the realised profit is\n\n$$\\pi(x, d) = \\begin{cases} p d - v x - c_h (x - d), & \\text{if } x \\geq d \\\\ p x - v x - c_s (d - x), & \\text{if } x < d. \\end{cases}$$\n\nThe order quantity that maximises expected profit is $x^* = F^{-1}(\\tau)$, with overage cost $c_o = v + c_h$, underage cost $c_u = p - v + c_s$ and critical quantile $\\tau = \\frac{c_u}{c_o + c_u}$. A product with $\\tau > 0.5$ is called high-margin, one with $\\tau < 0.5$ low-margin."
+  },
+  {
+   "id": "D2",
+   "term": "critical quantile",
+   "symbol": "$\\tau$",
+   "kind": "variable",
+   "part_of": [
+    "D1"
+   ],
+   "unit": "1",
+   "definition": "The quantile $\\tau = \\frac{c_u}{c_o + c_u}$ of the demand distribution at which the [[D1:newsvendor problem]] is solved; also the target service level."
+  },
+  {
+   "id": "D3",
+   "term": "textbook order quantity",
+   "symbol": "$x^*_t$",
+   "kind": "method",
+   "part_of": [
+    "D1"
+   ],
+   "definition": "The order quantity for period $t$ obtained from the formula $x^*_t = F^{-1}(\\tau)$ of the [[D1:newsvendor problem]], with the demand distribution's mean and standard deviation replaced by their estimates $\\hat{\\mu}_t$ and $\\hat{\\sigma}_t$ from a forecasting model fitted to the demands $d_1, \\dots, d_{t-1}$."
+  },
+  {
+   "id": "D7",
+   "term": "demand chasing parameter",
+   "symbol": "$\\beta$",
+   "kind": "variable",
+   "part_of": [
+    "D6"
+   ],
+   "unit": "1",
+   "definition": "The weight on the previous period's forecast error $d_{t-1} - x_{t-1}$ in the two-stage adjustment model; a higher value means stronger demand chasing."
+  },
+  {
+   "id": "D8",
+   "term": "pull-to-centre parameter",
+   "symbol": "$\\gamma$",
+   "kind": "variable",
+   "part_of": [
+    "D6"
+   ],
+   "unit": "1",
+   "definition": "The weight on the estimated mean demand in the two-stage adjustment model; a higher value means stronger pull-to-centre."
+  },
+  {
+   "id": "D4",
+   "term": "demand chasing",
+   "short": "DC",
+   "kind": "method",
+   "source": "B2",
+   "definition": "Adjustment of the order quantity towards the realised demand of the previous period. In its simplest model, taken from [[B2:Bostian et al. (2008)]],\n\n$$x_t = x_{t-1} + \\beta (d_{t-1} - x_{t-1}),$$\n\nwhere $x_t$ is the order quantity in period $t$, $d_{t-1}$ the realised demand in the previous period and $\\beta > 0$ the [[D7:demand chasing parameter]]. The model is simple exponential smoothing in error-correction form: it ignores the newsvendor solution and converges to the mean demand."
+  },
+  {
+   "id": "D5",
+   "term": "pull-to-centre",
+   "short": "PtC",
+   "kind": "method",
+   "source": "B2",
+   "definition": "Adjustment of the order quantity towards the mean demand, also called the mean anchor heuristic:\n\n$$x_t = (1 - \\gamma) x^*_t + \\gamma \\hat{\\mu}_t,$$\n\nwhere $x^*_t$ is the [[D3:textbook order quantity]], $\\hat{\\mu}_t$ the estimated mean demand for period $t$ and $0 < \\gamma < 1$ the [[D8:pull-to-centre parameter]]."
+  },
+  {
+   "id": "D6",
+   "term": "two-stage adjustment model",
+   "kind": "method",
+   "definition": "Model of naïve adjustment in which [[D4:demand chasing]] is applied after [[D5:pull-to-centre]]:\n\n$$\\begin{aligned} x'_t &= (1 - \\gamma) x^*_t + \\gamma \\hat{\\mu}_t \\\\ x_t &= x'_t + \\beta (d_{t-1} - x_{t-1}), \\end{aligned}$$\n\nwhich combine into the single formula\n\n$$x_t = (1 - \\gamma) x^*_t + \\gamma \\hat{\\mu}_t + \\beta (d_{t-1} - x_{t-1}).$$\n\nHere $x^*_t$ is the [[D3:textbook order quantity]], $\\hat{\\mu}_t$ the estimated mean demand, $d_{t-1}$ the previous period's demand, $x_{t-1}$ the previous period's order, $\\gamma$ the [[D8:pull-to-centre parameter]] and $\\beta$ the [[D7:demand chasing parameter]]. The estimates $\\hat{\\mu}_t$, $x^*_t$ and $x_{t-1}$ all rest on $d_1, \\dots, d_{t-1}$ and carry estimation error.",
+   "assumptions": [
+    "C22",
+    "C23"
+   ]
+  },
+  {
+   "id": "D9",
+   "term": "percentage profit loss",
+   "short": "PPL",
+   "kind": "variable",
+   "source": "B5",
+   "unit": "%",
+   "definition": "Profit shortfall of an order quantity $x_t$ against ordering the realised demand, in per cent:\n\n$$\\mathrm{PPL}(x_t) = 100 \\, \\frac{\\pi(d_t, d_t) - \\pi(x_t, d_t)}{\\pi(d_t, d_t)},$$\n\nwith $\\pi$ the profit of the [[D1:newsvendor problem]]."
+  },
+  {
+   "id": "D10",
+   "term": "relative profit improvement",
+   "short": "RPI",
+   "kind": "variable",
+   "unit": "%",
+   "definition": "Improvement of the adjusted order quantity $x_t$ over the [[D3:textbook order quantity]] $x^*_t$ in [[D9:percentage profit loss]]:\n\n$$\\mathrm{RPI}(x_t) = 1 - \\frac{\\mathrm{PPL}(x_t)}{\\mathrm{PPL}(x^*_t)}.$$\n\nA positive value means the adjustment improved on the textbook order quantity; a negative value means it did worse. Also known as forecast value added."
+  },
+  {
+   "id": "D11",
+   "term": "simulated ARIMA(1,0,1) demand",
+   "kind": "data",
+   "definition": "500 simulated demand series of 200 periods each, generated with the `arima.sim()` function of the stats R package from an ARIMA(1,0,1) process with initial mean 10000 and normally distributed noise with standard deviation 100."
+  },
+  {
+   "id": "D12",
+   "term": "correctly specified ARIMA(1,0,1) model",
+   "kind": "method",
+   "definition": "An ARIMA(1,0,1) forecasting model, the same form as the process generating the [[D11:simulated ARIMA(1,0,1) demand]], with its parameters estimated by maximum likelihood.",
+   "short": "Correct ARIMA(1,0,1) model"
+  },
+  {
+   "id": "D13",
+   "term": "under-parametrised MA(1) model",
+   "kind": "method",
+   "definition": "An MA(1) forecasting model fitted to the [[D11:simulated ARIMA(1,0,1) demand]]: it omits the autoregressive term of the generating process."
+  },
+  {
+   "id": "D14",
+   "term": "over-parametrised ARIMA(2,0,1) model",
+   "kind": "method",
+   "definition": "An ARIMA(2,0,1) forecasting model fitted to the [[D11:simulated ARIMA(1,0,1) demand]]: it has one redundant autoregressive term."
+  },
+  {
+   "id": "D15",
+   "term": "simulated Laplace-error demand",
+   "kind": "data",
+   "definition": "Demand series generated as the [[D11:simulated ARIMA(1,0,1) demand]] but with Laplace-distributed instead of normally distributed noise; the [[D3:textbook order quantity]] is computed under the incorrect assumption of normal noise."
+  },
+  {
+   "id": "D16",
+   "term": "simulation procedure",
+   "kind": "design",
+   "definition": "For each series and a chosen forecasting model and pair $(\\beta, \\gamma)$: (a) for $t = 21, \\dots, 200$, maximum-likelihood estimates $\\hat{\\mu}_t$ and $\\hat{\\sigma}_t$ of the mean and standard deviation of demand in period $t$ are obtained with the `arima()` function of the stats R package; (b) the [[D3:textbook order quantity]] $x^*_t$ is computed from $\\tau$, $\\hat{\\mu}_t$ and $\\hat{\\sigma}_t$; (c) the order is set to $x_{20} = d_{20}$ and, for $t = 21, \\dots, 200$, follows the [[D6:two-stage adjustment model]]. [[D10:Relative profit improvement]] is computed per period and averaged over the 500 series. The first 20 periods serve only for estimation, as estimates from fewer observations may be biased."
+  },
+  {
+   "id": "D17",
+   "term": "tuning heuristic",
+   "kind": "method",
+   "definition": "Choice of the parameters $\\beta$ and $\\gamma$ of the [[D6:two-stage adjustment model]] by maximising the in-sample empirical profit over a training set of periods $t \\in [1, s]$, rather than by minimising the mean squared or mean absolute error:\n\n$$\\max_{\\beta, \\gamma} \\sum_{t=2}^{s} \\pi(x^*_t, \\hat{\\mu}_t, x_t, d_t),$$\n\nwhere $x_t$ is computed from the forecasting model's $\\hat{\\mu}_t$, the [[D3:textbook order quantity]] $x^*_t$ and the realised demands. The maximisation uses a derivative-free algorithm, such as Nelder-Mead."
+  },
+  {
+   "id": "D18",
+   "term": "grocery store data",
+   "kind": "data",
+   "definition": "Daily demands of four perishable products, named A, B, C and D for confidentiality, from a medium-sized grocery store, over about 9 weeks from mid-October to December. The products were chosen to differ in data structure, prices, demands and critical quantiles; their prices and costs are given in the table.",
+   "tables": [
+    {
+     "description": "Selling price $p$, purchase price $v$, holding cost $c_h$, shortage cost $c_s$ and critical quantile $\\tau$ of each product.",
+     "columns": [
+      "Product",
+      "$p$",
+      "$v$",
+      "$c_h$",
+      "$c_s$",
+      "$\\tau$"
+     ],
+     "rows": [
+      [
+       "A",
+       "2.96",
+       "1.28",
+       "0.49",
+       "0.51",
+       "0.55"
+      ],
+      [
+       "B",
+       "11.98",
+       "4.13",
+       "2.49",
+       "1.33",
+       "0.58"
+      ],
+      [
+       "C",
+       "2.86",
+       "1.96",
+       "0.78",
+       "0.56",
+       "0.35"
+      ],
+      [
+       "D",
+       "4.29",
+       "3.24",
+       "1.03",
+       "0.21",
+       "0.23"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "D19",
+   "term": "rolling-origin evaluation",
+   "kind": "design",
+   "source": "B11",
+   "definition": "Rolling origin with constant in-sample size: at each iteration three-fifths of a product's data form the training set, on which the [[D17:tuning heuristic]] is run, and a one-step-ahead forecast and order are made."
+  },
+  {
+   "id": "D20",
+   "term": "automatic ETS selection",
+   "kind": "method",
+   "source": "B10",
+   "definition": "The `ets()` function of the forecast R package, which selects an ETS model by the Akaike Information Criterion; its forecasts give the [[D3:textbook order quantity]] before tuning."
+  },
+  {
+   "id": "D21",
+   "term": "achieved service level",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "The share of periods in which the order quantity covered the realised demand, compared with the target [[D2:critical quantile]]."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "name": "Modest adjustment raises profit on short data",
+   "summary": "When the right kind of demand model is used but fitted to little data, adding moderate demand chasing and pull-to-centre to the textbook order raises average profit, by up to 5.1% of the textbook order's profit loss.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and $\\tau = 0.7$, over the evaluation period $t \\in [21, 110]$, the [[D6:two-stage adjustment model]] has a positive mean [[D10:relative profit improvement]] over the [[D3:textbook order quantity]] for every pair with $\\beta \\leq 0.3$ and $\\gamma \\leq 0.5$, the highest being 5.1% at $\\beta = 0.2$ and $\\gamma = 0.1$.",
+   "about": {
+    "subject": "D6",
+    "relation": "has positive mean relative profit improvement over",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "evaluation period $t \\in [21, 110]$",
+     "$\\beta \\leq 0.3$, $\\gamma \\leq 0.5$, not both 0"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ],
+     "results": [
+      "E1.T1.r1",
+      "E1.T1.r2",
+      "E1.T1.r3",
+      "E1.T1.r4"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B4",
+     "note": "Decision makers in laboratory newsvendor experiments with a known demand distribution deviate from the optimal order through demand chasing and pull-to-centre, which reduces their profit."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "500 simulated series from one generating process, no replication on other processes."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Strong demand chasing loses profit on short data",
+   "summary": "With little data, heavy demand chasing (a weight of 0.4 or more on last period's error) lowers profit compared with the textbook order, whatever the amount of pull-to-centre.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and $\\tau = 0.7$, over the evaluation period $t \\in [21, 110]$, the [[D6:two-stage adjustment model]] has a negative mean [[D10:relative profit improvement]] over the [[D3:textbook order quantity]] for every pair with $\\beta \\geq 0.4$ and $\\gamma \\leq 0.5$.",
+   "about": {
+    "subject": "D6",
+    "relation": "has negative mean relative profit improvement over",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "evaluation period $t \\in [21, 110]$",
+     "$\\beta \\in \\{0.4, 0.5\\}$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ],
+     "results": [
+      "E1.T1.r5",
+      "E1.T1.r6"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "500 simulated series from one generating process."
+    }
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "qualifies",
+     "target": "C1",
+     "id_type": "local",
+     "note": "Beyond $\\beta = 0.3$ the short-data gain of C1 turns into a loss."
+    }
+   ],
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Adjustment mostly loses profit on long data",
+   "summary": "Once more data have accumulated, almost every combination of adjustments lowers profit compared with the textbook order; only moderate demand chasing with little pull-to-centre still gains, by at most 0.3%.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and $\\tau = 0.7$, over the evaluation period $t \\in [111, 200]$, the [[D6:two-stage adjustment model]] has a negative mean [[D10:relative profit improvement]] over the [[D3:textbook order quantity]] for every pair with $\\beta, \\gamma \\leq 0.5$ except $\\beta = 0.2$ with $\\gamma \\leq 0.3$, where it is at most 0.3%.",
+   "about": {
+    "subject": "D6",
+    "relation": "has negative mean relative profit improvement over",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "evaluation period $t \\in [111, 200]$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ],
+     "results": [
+      "E1.T2"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "500 simulated series from one generating process."
+    }
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C4",
+     "id_type": "local",
+     "results": [
+      "E1.T2"
+     ],
+     "note": "On the long evaluation period the gain has mostly turned into a loss."
+    }
+   ],
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "The benefit of adjustment fades as data accumulate",
+   "summary": "The profit gain from adjusting the textbook order is largest when few observations are available, shrinks as the history grows, and eventually turns into a loss.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and $\\tau = 0.7$, for each of the pairs $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ and $(0.2, 0.1)$, the mean [[D10:relative profit improvement]] of the [[D6:two-stage adjustment model]] over the [[D3:textbook order quantity]] is well above zero when the data are short, decreases as the data length grows, and eventually becomes negative.",
+   "about": {
+    "subject": "D6",
+    "relation": "has relative profit improvement that decreases with data length over",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "$(\\beta, \\gamma) \\in \\{(0, 0.4), (0.1, 0), (0.2, 0.1)\\}$",
+     "data lengths from 20 to 199 observations"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B4",
+     "note": "Decision makers in laboratory newsvendor experiments with a known demand distribution deviate from the optimal order through demand chasing and pull-to-centre, which reduces their profit."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Shown for three parameter pairs on one generating process; consistent with the short and long evaluation periods of E1."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Profit is more sensitive to demand chasing than to pull-to-centre",
+   "summary": "Changing the demand chasing weight changes the profit gain from adjustment more than changing the pull-to-centre weight by the same amount.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and $\\tau = 0.7$, the mean [[D10:relative profit improvement]] of the [[D6:two-stage adjustment model]] over the [[D3:textbook order quantity]] varies more with the [[D7:demand chasing parameter]] than with the [[D8:pull-to-centre parameter]] over $\\{0, 0.1, \\dots, 0.5\\}$, in both the short and the long evaluation period.",
+   "about": {
+    "subject": "D7",
+    "relation": "affects relative profit improvement more than",
+    "object": "D10",
+    "comparator": "D8",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "$\\beta, \\gamma \\in \\{0, 0.1, \\dots, 0.5\\}$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ],
+     "results": [
+      "E1.T1",
+      "E1.T2"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Visible across both tables of E1; the paper reports the same for other data inputs without showing them."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Best adjustment at 20 observations is mostly demand chasing",
+   "summary": "With only 20 past observations, the most profitable adjustment combines a demand chasing weight of about 0.2 with a pull-to-centre weight of about 0.05; large adjustments of either kind lose profit.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]], $\\tau = 0.7$ and 20 past observations ($t = 21$), the mean [[D10:relative profit improvement]] of the [[D6:two-stage adjustment model]] over the [[D3:textbook order quantity]] is highest at about $\\beta = 0.2$ and $\\gamma = 0.05$, and is negative for large adjustments.",
+   "about": {
+    "subject": "D6",
+    "relation": "has highest relative profit improvement at",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "20 past observations ($t = 21$)"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L4"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Read approximately from a heat map of one simulation setting."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Small-sample estimation error explains the short-data gain",
+   "summary": "A likely reason for the gain on short data is that the estimated mean and spread of demand are error-prone, possibly biased, when few observations exist, and a small adjustment moves the order towards the true optimum.",
+   "statement": "The positive [[D10:relative profit improvement]] of modest adjustment on short simulated data may arise because maximum-likelihood estimates of the mean $\\hat{\\mu}_t$ and standard deviation $\\hat{\\sigma}_t$ of demand are prone to error, possibly with a systematic bias that decreases over time, when few observations are available, so that a small adjustment shifts the order quantity towards the true optimal value.",
+   "about": {
+    "subject": "small-sample estimation error of the mean and standard deviation of demand",
+    "relation": "may explain",
+    "object": "positive relative profit improvement of modest adjustment on short data",
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "interpretive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "argument",
+     "warrant": "W1"
+    }
+   ],
+   "warrant": "W1",
+   "relations": [
+    {
+     "type": "explains",
+     "target": "C4",
+     "id_type": "local"
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "A tentative explanation the paper offers; it does not test the estimation bias directly."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C8",
+   "name": "Adjustment helps for high and low critical quantiles",
+   "summary": "With 20 past observations, adjustment improves on the textbook order when the target service level is 0.3, 0.7 or 0.9, and the gains at 0.3 and 0.7 are similar.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]] and 20 past observations ($t = 21$), the [[D6:two-stage adjustment model]] with $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ or $(0.2, 0.1)$ yields a positive [[D10:relative profit improvement]] over the [[D3:textbook order quantity]] for $\\tau = 0.3$, $\\tau = 0.7$ and $\\tau = 0.9$.",
+   "about": {
+    "subject": "D6",
+    "relation": "yields positive relative profit improvement over",
+    "object": "D10",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "20 past observations ($t = 21$)",
+     "$\\tau \\in \\{0.3, 0.7, 0.9\\}$",
+     "$(\\beta, \\gamma) \\in \\{(0, 0.4), (0.1, 0), (0.2, 0.1)\\}$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E2",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C1",
+     "id_type": "local",
+     "note": "The short-data gain of C1 also holds at other critical quantiles."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Boxplots over 500 series for three parameter pairs."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "No gain and no loss at the median",
+   "summary": "When the target service level is 0.5, adjustment gives no profit gain over the textbook order, but causes no noticeable loss either.",
+   "statement": "With the [[D12:correctly specified ARIMA(1,0,1) model]] on the [[D11:simulated ARIMA(1,0,1) demand]], 20 past observations ($t = 21$) and $\\tau = 0.5$, the [[D6:two-stage adjustment model]] with $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ or $(0.2, 0.1)$ yields no benefit in profit over the [[D3:textbook order quantity]] and no noticeable loss.",
+   "about": {
+    "subject": "D6",
+    "relation": "yields neither benefit nor noticeable loss over",
+    "object": "profit",
+    "comparator": "D3",
+    "conditions": [
+     "D12",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "20 past observations ($t = 21$)",
+     "$\\tau = 0.5$",
+     "$(\\beta, \\gamma) \\in \\{(0, 0.4), (0.1, 0), (0.2, 0.1)\\}$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E2",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "type": "qualifies",
+     "target": "C1",
+     "id_type": "local",
+     "note": "The short-data gain does not appear at the median."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Boxplots over 500 series for three parameter pairs."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "Adjustment raises profit when the model omits a variable",
+   "summary": "Even with plenty of data, when the forecasting model leaves out part of the true demand process, adjusting the textbook order increases profit markedly.",
+   "statement": "With the [[D13:under-parametrised MA(1) model]] fitted to the [[D11:simulated ARIMA(1,0,1) demand]], $\\tau = 0.7$ and 199 past observations ($t = 200$), the [[D6:two-stage adjustment model]] with $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ or $(0.2, 0.1)$ yields a marked increase in profit over the [[D3:textbook order quantity]].",
+   "about": {
+    "subject": "D6",
+    "relation": "increases profit over",
+    "object": "profit",
+    "comparator": "D3",
+    "conditions": [
+     "D13",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "199 past observations ($t = 200$)",
+     "$(\\beta, \\gamma) \\in \\{(0, 0.4), (0.1, 0), (0.2, 0.1)\\}$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E3",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2"
+   ],
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B4",
+     "note": "Decision makers in laboratory newsvendor experiments with a known demand distribution deviate from the optimal order through demand chasing and pull-to-centre, which reduces their profit."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Judged from boxplots of one misspecification of one generating process, without a statistical test (L2)."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "Smaller gain when the model has a redundant variable",
+   "summary": "When the forecasting model has an unnecessary extra term, adjustment still seems to improve profit, but less than when a term is missing.",
+   "statement": "With the [[D14:over-parametrised ARIMA(2,0,1) model]] fitted to the [[D11:simulated ARIMA(1,0,1) demand]], $\\tau = 0.7$ and $t = 200$, the improvement in profit of the [[D6:two-stage adjustment model]] over the [[D3:textbook order quantity]] seems to be present but is less pronounced than with the [[D13:under-parametrised MA(1) model]].",
+   "about": {
+    "subject": "D6",
+    "relation": "has a less pronounced profit improvement than under under-parametrisation over",
+    "object": "profit",
+    "comparator": "D3",
+    "conditions": [
+     "D14",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "$t = 200$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E3",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2"
+   ],
+   "relations": [
+    {
+     "type": "qualifies",
+     "target": "C10",
+     "id_type": "local"
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Judged from boxplots and a heat map, without a statistical test."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "Pull-to-centre matters more under under-parametrisation",
+   "summary": "When the forecasting model omits a term, the most profitable pull-to-centre weight is larger than the most profitable demand chasing weight.",
+   "statement": "With the [[D13:under-parametrised MA(1) model]] fitted to the [[D11:simulated ARIMA(1,0,1) demand]], $\\tau = 0.7$ and $t = 200$, the [[D8:pull-to-centre parameter]] that maximises the [[D10:relative profit improvement]] of the [[D6:two-stage adjustment model]] is larger than the maximising [[D7:demand chasing parameter]].",
+   "about": {
+    "subject": "D8",
+    "relation": "has a larger profit-maximising value than",
+    "object": "D10",
+    "comparator": "D7",
+    "conditions": [
+     "D13",
+     "D11"
+    ]
+   },
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$\\tau = 0.7$",
+     "$t = 200$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E3",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Read from a heat map (Figure 8 of the paper) of one setting."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C13",
+   "name": "Omitted variables inflate the variance estimate",
+   "summary": "A likely reason why pulling orders towards the mean helps under a model that omits a term is that such a model overestimates the variance of demand, placing orders too far from the mean.",
+   "statement": "The benefit of the [[D5:pull-to-centre]] adjustment under the [[D13:under-parametrised MA(1) model]] is probably due to the omitted variable leading to an over-estimate of the demand variance, which places the [[D3:textbook order quantity]] further from the mean than required.",
+   "about": {
+    "subject": "over-estimation of the demand variance by a model that omits a variable",
+    "relation": "probably explains",
+    "object": "the benefit of pull-to-centre under under-parametrisation",
+    "comparator": null,
+    "conditions": [
+     "D13"
+    ]
+   },
+   "type": "interpretive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "argument",
+     "warrant": "W2"
+    }
+   ],
+   "warrant": "W2",
+   "relations": [
+    {
+     "type": "explains",
+     "target": "C12",
+     "id_type": "local"
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "An explanation the paper offers; the variance estimates are not reported."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C14",
+   "name": "Adjustment raises profit under a wrong error distribution at high quantiles",
+   "summary": "When demand has heavier-tailed noise than the normal noise assumed, adjusting the textbook order improves expected profit for a target service level of 0.9.",
+   "statement": "With the [[D15:simulated Laplace-error demand]] and order quantities computed under the assumption of normal noise, at $t = 200$ and $\\tau = 0.9$, the [[D6:two-stage adjustment model]] improves expected profit over the [[D3:textbook order quantity]].",
+   "about": {
+    "subject": "D6",
+    "relation": "improves expected profit over",
+    "object": "profit",
+    "comparator": "D3",
+    "conditions": [
+     "D15"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$t = 200$",
+     "$\\tau = 0.9$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E4",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Judged from boxplots of one setting, without a statistical test (L2)."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C15",
+   "name": "No gain under a wrong error distribution at the median",
+   "summary": "When the target service level is 0.5, the benefit of adjustment under a wrong noise distribution disappears.",
+   "statement": "With the [[D15:simulated Laplace-error demand]] and order quantities computed under the assumption of normal noise, at $t = 200$ and $\\tau = 0.5$, the [[D6:two-stage adjustment model]] yields no improvement in expected profit over the [[D3:textbook order quantity]].",
+   "about": {
+    "subject": "D6",
+    "relation": "yields no improvement in expected profit over",
+    "object": "profit",
+    "comparator": "D3",
+    "conditions": [
+     "D15"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$t = 200$",
+     "$\\tau = 0.5$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E4",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "relations": [
+    {
+     "type": "qualifies",
+     "target": "C14",
+     "id_type": "local"
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Judged from boxplots of one setting."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C16",
+   "name": "Pull-to-centre helps more than demand chasing under a wrong error distribution",
+   "summary": "Under a wrong assumption about the noise distribution, pulling orders towards the mean helps more than chasing last period's demand.",
+   "statement": "With the [[D15:simulated Laplace-error demand]] and order quantities computed under the assumption of normal noise, at $t = 200$, [[D5:pull-to-centre]] seems to give a larger profit improvement over the [[D3:textbook order quantity]] than [[D4:demand chasing]].",
+   "about": {
+    "subject": "D5",
+    "relation": "seems to give a larger profit improvement than",
+    "object": "profit",
+    "comparator": "D4",
+    "conditions": [
+     "D15"
+    ]
+   },
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "$t = 200$"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E4",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Judged from boxplots of one setting."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C17",
+   "name": "Demand chasing is the more useful adjustment on short data",
+   "summary": "When the demand model is right but little data is available, demand chasing is the more useful of the two naïve adjustments.",
+   "statement": "With a correctly specified forecasting model and short demand histories, [[D4:demand chasing]] is more useful than [[D5:pull-to-centre]] for increasing the profit of the [[D3:textbook order quantity]].",
+   "about": {
+    "subject": "D4",
+    "relation": "is more useful for profit than",
+    "object": "profit",
+    "comparator": "D5",
+    "conditions": [
+     "correctly specified forecasting model",
+     "short demand histories"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "simulated ARIMA(1,0,1) demand",
+     "short demand histories"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E1",
+     "artefacts": [
+      "A1"
+     ],
+     "results": [
+      "E1.T1"
+     ]
+    }
+   ],
+   "depends_on": [
+    "C5",
+    "C6"
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Rests on C5 and C6 for one generating process."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C18",
+   "name": "Pull-to-centre is the more useful adjustment under misspecification",
+   "summary": "When the demand model is wrong, by omitting a term or assuming the wrong noise distribution, pull-to-centre is more beneficial than demand chasing.",
+   "statement": "When the forecasting model omits an important variable or assumes the wrong error distribution, [[D5:pull-to-centre]] gives a larger profit improvement over the [[D3:textbook order quantity]] than [[D4:demand chasing]].",
+   "about": {
+    "subject": "D5",
+    "relation": "gives a larger profit improvement than",
+    "object": "profit",
+    "comparator": "D4",
+    "conditions": [
+     "forecasting model omits an important variable or assumes the wrong error distribution"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "conditions": [
+     "simulated demand, $t = 200$"
+    ],
+    "excludes": [
+     "models with redundant variables"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E3",
+     "artefacts": [
+      "A1"
+     ]
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E4",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "depends_on": [
+    "C12",
+    "C16"
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Rests on C12 and C16, both judged from figures without a statistical test."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": [
+    "availability_not_stated"
+   ]
+  },
+  {
+   "id": "C19",
+   "name": "Tuned adjustment beats the untuned order on real grocery data",
+   "summary": "On real data for four perishable grocery products, orders adjusted with tuned parameters earned more out of sample than the textbook orders from automatic ETS forecasts, for every product.",
+   "statement": "On the [[D18:grocery store data]] under [[D19:rolling-origin evaluation]], order quantities of the [[D6:two-stage adjustment model]] with parameters chosen by the [[D17:tuning heuristic]] have a positive out-of-sample [[D10:relative profit improvement]] over the [[D3:textbook order quantity]] from [[D20:automatic ETS selection]] for each of the four products.",
+   "about": {
+    "subject": "D17",
+    "relation": "has positive out-of-sample relative profit improvement over",
+    "object": "D10",
+    "comparator": "D20",
+    "conditions": [
+     "D18",
+     "D19"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E5"
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B3",
+     "note": "Newsvendor decisions can be fitted by maximising in-sample profit instead of minimising a forecast error measure."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Four products of one store over about 9 weeks, shown as boxplots."
+    }
+   ],
+   "provenance": "author_stated",
+   "scope": {
+    "period": "about 9 weeks of daily demand, mid-October to December",
+    "conditions": [
+     "one-step-ahead orders",
+     "training set of three-fifths of each product's data"
+    ]
+   },
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C20",
+   "name": "Tuning moves the service level towards its target",
+   "summary": "For three of the four grocery products, tuning brought the achieved service level closer to the target set by prices and costs; for the fourth it moved from below to above the target by the same distance.",
+   "statement": "On the [[D18:grocery store data]], the [[D21:achieved service level]] of the order quantities tuned by the [[D17:tuning heuristic]] is closer to the target [[D2:critical quantile]] than that of the pre-tuning order quantities from [[D20:automatic ETS selection]] for products A, B and C, and equally distant from it for product D.",
+   "about": {
+    "subject": "D17",
+    "relation": "brings the achieved service level closer to the target than",
+    "object": "D21",
+    "comparator": "D20",
+    "conditions": [
+     "D18"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E5",
+     "results": [
+      "E5.T1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C19",
+     "id_type": "local",
+     "results": [
+      "E5.T1"
+     ]
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Four products of one store."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C21",
+   "name": "Tuning helps with four other forecasting methods",
+   "summary": "When forecasts come from four other common methods instead of ETS, tuned adjustment still earns more than the untuned order out of sample, for every product and method.",
+   "statement": "On the [[D18:grocery store data]], with forecasts from each of the Mean, S-Mean, S-Naïve and ARIMA methods, order quantities tuned by the [[D17:tuning heuristic]] have a positive out-of-sample [[D10:relative profit improvement]] over the pre-tuning order quantities for each of the four products.",
+   "about": {
+    "subject": "D17",
+    "relation": "has positive out-of-sample relative profit improvement over",
+    "object": "D10",
+    "comparator": "pre-tuning order quantities",
+    "conditions": [
+     "D18",
+     "Mean, S-Mean, S-Naïve and ARIMA forecasts"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E5",
+     "results": [
+      "E5.T2"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C19",
+     "id_type": "local",
+     "results": [
+      "E5.T2"
+     ]
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Four products of one store; 16 product-method pairs."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C22",
+   "statement": "The [[D7:demand chasing parameter]] and the [[D8:pull-to-centre parameter]] of the [[D6:two-stage adjustment model]] lie between 0 and 0.5.",
+   "type": "descriptive",
+   "role": "supporting",
+   "support": [
+    {
+     "kind": "assumption"
+    }
+   ],
+   "assumption_category": "methodological",
+   "check": "unchecked",
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C23",
+   "statement": "The adjustment parameters of the [[D6:two-stage adjustment model]] are constant over time, and the adjustment is applied in every period.",
+   "type": "descriptive",
+   "role": "supporting",
+   "support": [
+    {
+     "kind": "assumption"
+    }
+   ],
+   "assumption_category": "methodological",
+   "check": "unchecked",
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "simulation",
+   "description": "Simulation in which the forecasting model has the form of the generating process: the [[D12:correctly specified ARIMA(1,0,1) model]] is fitted to the [[D11:simulated ARIMA(1,0,1) demand]] following the [[D16:simulation procedure]], with $\\tau = 0.7$, for every pair $(\\beta, \\gamma)$ in $\\{0, 0.1, \\dots, 0.5\\}^2$. Mean [[D10:relative profit improvement]] is reported over the short evaluation period $t \\in [21, 110]$ and the long period $t \\in [111, 200]$ (tables T1 and T2), against data length for $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ and $(0.2, 0.1)$ (Figure 1 of the paper), and as a heat map over the pairs at $t = 21$ (Figure 2).",
+   "setup": {
+    "studied": [
+     "D6",
+     "D4",
+     "D5",
+     "D3"
+    ],
+    "cases": [
+     "D11"
+    ],
+    "procedure": [
+     "D16",
+     "D12",
+     "D7",
+     "D8"
+    ],
+    "lens": [
+     "D10"
+    ]
+   },
+   "model": "ARIMA(1,0,1) demand, initial mean 10000, normal noise with standard deviation 100",
+   "runs": 500,
+   "data_origin": "primary",
+   "preregistered": false,
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Mean relative profit improvement of the two-stage adjustment over the textbook order quantity, short evaluation period $t \\in [21, 110]$, by demand chasing parameter (rows) and pull-to-centre parameter (columns), $\\tau = 0.7$; the pair $(0, 0)$ is the benchmark itself.",
+     "conditions": {
+      "forecasting model": "D12",
+      "D2": 0.7,
+      "evaluation period": "short, t from 21 to 110"
+     },
+     "row_labels": [
+      "D7"
+     ],
+     "columns": [
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.1
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.2
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.3
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.4
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.5
+       }
+      }
+     ],
+     "units": [
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        0
+       ],
+       "values": [
+        null,
+        3.5,
+        3.4,
+        3.3,
+        3.2,
+        2.8
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        0.1
+       ],
+       "values": [
+        3.8,
+        5.0,
+        4.8,
+        4.7,
+        4.6,
+        3.8
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        0.2
+       ],
+       "values": [
+        4.2,
+        5.1,
+        5.0,
+        4.6,
+        3.0,
+        2.4
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        0.3
+       ],
+       "values": [
+        2.5,
+        2.8,
+        2.6,
+        1.5,
+        0.9,
+        0.2
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        0.4
+       ],
+       "values": [
+        -2.4,
+        -1.3,
+        -1.9,
+        -3.1,
+        -3.9,
+        -5.0
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        0.5
+       ],
+       "values": [
+        -5.1,
+        -3.9,
+        -4.4,
+        -5.9,
+        -6.8,
+        -7.7
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "description": "Mean relative profit improvement of the two-stage adjustment over the textbook order quantity, long evaluation period $t \\in [111, 200]$, by demand chasing parameter (rows) and pull-to-centre parameter (columns), $\\tau = 0.7$; the pair $(0, 0)$ is the benchmark itself.",
+     "conditions": {
+      "forecasting model": "D12",
+      "D2": 0.7,
+      "evaluation period": "long, t from 111 to 200"
+     },
+     "row_labels": [
+      "D7"
+     ],
+     "columns": [
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.1
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.2
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.3
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.4
+       }
+      },
+      {
+       "variable": "D10",
+       "statistic": "mean",
+       "conditions": {
+        "D8": 0.5
+       }
+      }
+     ],
+     "units": [
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        0
+       ],
+       "values": [
+        null,
+        -0.5,
+        -0.9,
+        -1.3,
+        -1.7,
+        -2.1
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        0.1
+       ],
+       "values": [
+        -0.7,
+        -0.2,
+        -0.5,
+        -0.7,
+        -0.9,
+        -1.3
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        0.2
+       ],
+       "values": [
+        0.1,
+        0.3,
+        0.2,
+        0.1,
+        -0.2,
+        -0.7
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        0.3
+       ],
+       "values": [
+        -2.1,
+        -1.6,
+        -2.6,
+        -3.3,
+        -4.1,
+        -5.1
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        0.4
+       ],
+       "values": [
+        -6.7,
+        -6.4,
+        -7.5,
+        -8.4,
+        -9.2,
+        -10.2
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        0.5
+       ],
+       "values": [
+        -11.1,
+        -10.5,
+        -11.8,
+        -12.8,
+        -13.8,
+        -14.7
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "profile": "simulation",
+   "description": "The simulation of E1 at $t = 21$ for four values of the [[D2:critical quantile]], $\\tau \\in \\{0.3, 0.5, 0.7, 0.9\\}$, and the pairs $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ and $(0.2, 0.1)$; the distribution of [[D10:relative profit improvement]] over the 500 series is shown as boxplots (Figure 3 of the paper).",
+   "setup": {
+    "studied": [
+     "D6",
+     "D4",
+     "D5",
+     "D3"
+    ],
+    "cases": [
+     "D11"
+    ],
+    "procedure": [
+     "D16",
+     "D12",
+     "D7",
+     "D8"
+    ],
+    "lens": [
+     "D10"
+    ]
+   },
+   "model": "ARIMA(1,0,1) demand, initial mean 10000, normal noise with standard deviation 100",
+   "runs": 500,
+   "data_origin": "primary",
+   "preregistered": false,
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   }
+  },
+  {
+   "id": "E3",
+   "profile": "simulation",
+   "description": "Simulation with misspecified forecasting models: the [[D13:under-parametrised MA(1) model]] and the [[D14:over-parametrised ARIMA(2,0,1) model]], beside the [[D12:correctly specified ARIMA(1,0,1) model]], fitted to the [[D11:simulated ARIMA(1,0,1) demand]] following the [[D16:simulation procedure]], with $\\tau = 0.7$ and [[D10:relative profit improvement]] taken at $t = 200$, when plenty of data are available. Results are shown as boxplots for $(\\beta, \\gamma) = (0, 0.4)$, $(0.1, 0)$ and $(0.2, 0.1)$ (Figure 4 of the paper) and as heat maps over the pairs (Figures 8 and 9, Appendix A).",
+   "setup": {
+    "studied": [
+     "D6",
+     "D4",
+     "D5",
+     "D3"
+    ],
+    "cases": [
+     "D11"
+    ],
+    "procedure": [
+     "D16",
+     "D13",
+     "D14",
+     "D12",
+     "D7",
+     "D8"
+    ],
+    "lens": [
+     "D10"
+    ]
+   },
+   "model": "ARIMA(1,0,1) demand, initial mean 10000, normal noise with standard deviation 100",
+   "runs": 500,
+   "data_origin": "primary",
+   "preregistered": false,
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   }
+  },
+  {
+   "id": "E4",
+   "profile": "simulation",
+   "description": "Simulation with a wrong error distribution: the [[D15:simulated Laplace-error demand]], with order quantities computed under the assumption of normal noise, following the [[D16:simulation procedure]] at $t = 200$; the distribution of [[D10:relative profit improvement]] over the series is shown as boxplots for several values of $\\tau$, among them 0.5 and 0.9 (Figure 5 of the paper).",
+   "setup": {
+    "studied": [
+     "D6",
+     "D4",
+     "D5",
+     "D3"
+    ],
+    "cases": [
+     "D15"
+    ],
+    "procedure": [
+     "D16",
+     "D7",
+     "D8"
+    ],
+    "lens": [
+     "D10"
+    ]
+   },
+   "model": "ARIMA demand with Laplace-distributed noise",
+   "data_origin": "primary",
+   "preregistered": false,
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   }
+  },
+  {
+   "id": "E5",
+   "profile": "quant",
+   "design": "benchmark",
+   "description": "Application of the [[D17:tuning heuristic]] to the [[D18:grocery store data]] by [[D19:rolling-origin evaluation]]. Order quantities before tuning come from [[D20:automatic ETS selection]]; tuned order quantities come from the [[D6:two-stage adjustment model]] with parameters chosen by the heuristic. Out-of-sample [[D10:relative profit improvement]] over the iterations is shown as boxplots per product (Figure 7 of the paper), the [[D21:achieved service level]] is compared with the target (table T1), and the experiment is repeated with four other forecasting methods (Mean, S-Mean, S-Naïve and ARIMA) in place of ETS (table T2).",
+   "setup": {
+    "studied": [
+     "D17"
+    ],
+    "cases": [
+     "D18"
+    ],
+    "procedure": [
+     "D19",
+     "D20"
+    ],
+    "lens": [
+     "D10",
+     "D21"
+    ]
+   },
+   "estimand": "relative profit improvement of tuned over pre-tuning order quantities",
+   "data_origin": "secondary",
+   "preregistered": false,
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "commercial"
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Target critical quantile and achieved service level of the order quantities before tuning (ETS) and after tuning, for each of the four grocery products.",
+     "row_labels": [
+      "order quantities"
+     ],
+     "columns": [
+      {
+       "variable": "D21",
+       "conditions": {
+        "product": "A"
+       }
+      },
+      {
+       "variable": "D21",
+       "conditions": {
+        "product": "B"
+       }
+      },
+      {
+       "variable": "D21",
+       "conditions": {
+        "product": "C"
+       }
+      },
+      {
+       "variable": "D21",
+       "conditions": {
+        "product": "D"
+       }
+      }
+     ],
+     "units": [
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "target"
+       ],
+       "values": [
+        0.55,
+        0.58,
+        0.35,
+        0.23
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "pre-tuning"
+       ],
+       "values": [
+        0.75,
+        0.8,
+        0.13,
+        0.17
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "tuned"
+       ],
+       "values": [
+        0.65,
+        0.62,
+        0.25,
+        0.29
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "description": "In-sample and out-of-sample relative profit improvement of tuned over pre-tuning order quantities when the forecasts come from each of four other forecasting methods, for each of the four grocery products.",
+     "row_labels": [
+      "product",
+      "forecasting method"
+     ],
+     "columns": [
+      {
+       "variable": "D10",
+       "conditions": {
+        "sample": "in-sample"
+       }
+      },
+      {
+       "variable": "D10",
+       "conditions": {
+        "sample": "out-of-sample"
+       }
+      }
+     ],
+     "units": [
+      "%",
+      "%"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "A",
+        "Mean"
+       ],
+       "values": [
+        4.2,
+        2.8
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "A",
+        "S-Mean"
+       ],
+       "values": [
+        0.4,
+        2.4
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "A",
+        "S-Naïve"
+       ],
+       "values": [
+        3.0,
+        2.4
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "A",
+        "ARIMA"
+       ],
+       "values": [
+        1.0,
+        0.4
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "B",
+        "Mean"
+       ],
+       "values": [
+        3.9,
+        4.1
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "B",
+        "S-Mean"
+       ],
+       "values": [
+        1.1,
+        2.9
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "B",
+        "S-Naïve"
+       ],
+       "values": [
+        2.5,
+        2.8
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "B",
+        "ARIMA"
+       ],
+       "values": [
+        1.9,
+        1.2
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "C",
+        "Mean"
+       ],
+       "values": [
+        4.1,
+        4.2
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "C",
+        "S-Mean"
+       ],
+       "values": [
+        2.8,
+        2.2
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "C",
+        "S-Naïve"
+       ],
+       "values": [
+        2.6,
+        2.5
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "C",
+        "ARIMA"
+       ],
+       "values": [
+        0.2,
+        1.1
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "D",
+        "Mean"
+       ],
+       "values": [
+        4.8,
+        3.1
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "D",
+        "S-Mean"
+       ],
+       "values": [
+        1.2,
+        3.5
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "D",
+        "S-Naïve"
+       ],
+       "values": [
+        3.3,
+        4.5
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "D",
+        "ARIMA"
+       ],
+       "values": [
+        2.6,
+        1.1
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "warrants": [
+  {
+   "id": "W1",
+   "reasoning": "abductive",
+   "premises": [
+    "C4"
+   ],
+   "text": "Maximum-likelihood estimates of the mean and standard deviation of demand are prone to error on few observations, possibly with a bias that decreases as data accumulate. A small adjustment can then move the order quantity towards the true optimum, and this effect should vanish as more data become available, which is the pattern C4 reports."
+  },
+  {
+   "id": "W2",
+   "reasoning": "abductive",
+   "premises": [
+    "C12"
+   ],
+   "text": "A model that omits a variable attributes the omitted variation to noise and so over-estimates the demand variance, placing the newsvendor order further from the mean than required for $\\tau \\neq 0.5$. Pull-to-centre brings the order back towards the mean and so offsets this bias, consistent with the larger profit-maximising pull-to-centre parameter in C12."
+  }
+ ],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "sampling",
+   "statement": "The simulations use a single generating process, an ARIMA(1,0,1) process with initial mean 10000 and noise standard deviation 100, so results for other demand processes are not shown.",
+   "affects": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C10",
+    "C11",
+    "C12"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L2",
+   "category": "measurement",
+   "statement": "The gains under misspecification are judged from boxplots and heat maps without a statistical test, and the paper reports no numerical values for them.",
+   "affects": [
+    "C10",
+    "C11",
+    "C12",
+    "C14",
+    "C15",
+    "C16"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "none"
+  },
+  {
+   "id": "L3",
+   "category": "sample_size",
+   "statement": "The real-life application covers four products of one grocery store over about 9 weeks of daily demand.",
+   "affects": [
+    "C19",
+    "C20",
+    "C21"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L4",
+   "category": "measurement",
+   "statement": "The parameter pair giving the highest relative profit improvement at $t = 21$ is read from a heat map and given only approximately.",
+   "affects": [
+    "C6"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none"
+  }
+ ],
+ "open_questions": [
+  {
+   "id": "O1",
+   "question": "Whether the effect of naïve adjustment on profit is symmetric around $\\tau = 0.5$ is suggested by similar results at $\\tau = 0.3$ and $\\tau = 0.7$ but not established.",
+   "claims": [
+    "C8"
+   ]
+  },
+  {
+   "id": "O2",
+   "question": "Which other scenarios make naïve demand chasing or pull-to-centre adjustment beneficial is not characterised.",
+   "claims": [
+    "C1",
+    "C10",
+    "C14"
+   ]
+  },
+  {
+   "id": "O3",
+   "question": "Whether forms of judgemental adjustment other than demand chasing and pull-to-centre improve newsvendor profit under scarce data or misspecification is not examined."
+  },
+  {
+   "id": "O4",
+   "question": "Whether behavioural experiments, in the laboratory or the field, confirm the simulated benefits of naïve adjustment is not established.",
+   "claims": [
+    "C1",
+    "C10"
+   ]
+  },
+  {
+   "id": "O5",
+   "question": "Whether the findings extend to multi-item newsvendor problems, with or without substitution between products, is not established."
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A1",
+   "kind": "manuscript",
+   "uri": "https://arxiv.org/abs/2209.11611v1",
+   "version": "v1",
+   "licence": "CC-BY-NC-ND-4.0",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The preprint on arXiv, version 1 (23 September 2022), from which this claimset was prepared by its authors."
+  }
+ ],
+ "references": [
+  {
+   "id": "B1",
+   "target": "10.2307/1906813",
+   "id_type": "doi"
+  },
+  {
+   "id": "B2",
+   "target": "10.1287/msom.1080.0228",
+   "id_type": "doi"
+  },
+  {
+   "id": "B3",
+   "target": "10.1287/opre.2018.1757",
+   "id_type": "doi"
+  },
+  {
+   "id": "B4",
+   "target": "10.1287/mnsc.46.3.404.12070",
+   "id_type": "doi"
+  },
+  {
+   "id": "B5",
+   "target": "10.1016/j.ejor.2021.08.013",
+   "id_type": "doi"
+  },
+  {
+   "id": "B10",
+   "target": "R. Hyndman, G. Athanasopoulos, C. Bergmeir, G. Caceres, L. Chhay, M. O'Hara-Wild, F. Petropoulos, S. Razbash, E. Wang, and F Yasmeen. forecast: Forecasting functions for time series and linear models, 2020. R package version 8.13.",
+   "id_type": "reference"
+  },
+  {
+   "id": "B11",
+   "target": "10.1016/s0169-2070(00)00065-0",
+   "id_type": "doi"
+  }
+ ]
+}
